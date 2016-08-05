@@ -1,0 +1,69 @@
+\pagestyle{fancy}
+\chapter[Equilibrio secolare]{Equilibrio secolare tra \ap{90}Sr e \ap{90}Y}
+\label{app:B}
+L'\emph{equilibrio secolare} è una condizione che si può verificare nel corso di %
+una catena di decadimenti radioattivi, in particolare se il tempo di dimezzamento %
+$\tau$\ped{P} di un nucleo padre P è molto maggiore dell'emivita %
+$\tau$\ped{F} del nucleo figlio F.
+Con queste condizioni, dopo un certo tempo, il numero di nuclei di F rimane %
+costante, cioè il numero di nuclei formati per unità di tempo bilancia il numero %
+di nuclei che decadono.
+
+Le leggi che regolano i decadimenti di P e F sono date dalle equazioni %
+differenziali
+\begin{equation}
+  \label{eq:A}
+  \dot{N}_{\mathrm{P}} = \frac{\mathrm{d}N_{\mathrm{P}}}{\mathrm{d}t} = %
+  - \lambda_{\mathrm{P}} N_{\mathrm{P}}\,,
+\end{equation}
+\begin{equation}
+  \label{eq:B}
+  \dot{N}_{\mathrm{F}} = \frac{\mathrm{d}N_{\mathrm{F}}}{\mathrm{d}t} = %
+  \lambda_{\mathrm{P}} N_{\mathrm{P}}-\lambda_{\mathrm{F}} N_{\mathrm{F}}\,,
+\end{equation} 
+dove le costanti di decadimento sono $\lambda_{\mathrm{P,F}} = \frac{\ln 2}{\tau_{\mathrm{P,F}}}$, %
+mentre $N$\ped{P,F} sono il numero di nuclidi al tempo $t$.
+
+La condizione di ``equilibrio secolare'', tra le due specie P e F, equivale ad annullare %
+l'equazione~\ref{eq:B}, dalla quale si trova
+\begin{equation}
+  \lambda_{\mathrm{P}} N_{\mathrm{P}} = \lambda_{\mathrm{F}} N_{\mathrm{F}}\,,
+\end{equation}
+ovvero che le due attività nucleari devono uguagliarsi.
+Infatti, l'\emph{attività} di un radionuclide è definita come il numero di decadimenti, cioè %
+la variazione del numero dei nuclei, in valore assoluto, per unità di tempo:
+\begin{equation}
+  A_{\mathrm{P,F}} = \biggl |\frac{\mathrm{d}N_{\mathrm{P,F}}}{\mathrm{d}t}\biggr | = %
+  \lambda_{\mathrm{P,F}} N_{\mathrm{P,F}} \,.
+\end{equation}
+
+Nel caso della catena di decadimento di \ap{90}Sr, già discussa nella sezione~\ref{sec:2.1}, %
+le attività di stronzio e ittrio si equivalgono dopo circa 26,62 giorni, %
+secondo~\cite{rep:spec}.
+
+Con il metodo di Eulero per la risoluzione di equazioni differenziali ordinarie, è stato %
+calcolato che i due nuclidi entrano in ``equilibrio secolare'' dopo 24,498 giorni con %
+un errore massimo dell'ordine di \np{E-3} giorni.
+L'algoritmo approssima i decadimenti con le equazioni discrete
+\begin{equation}
+  \begin{cases}
+  N_{\mathrm{P}}(t+h)=N_{\mathrm{P}}(t)-h[\lambda_{\mathrm{P}}N_{\mathrm{P}}(t)] \\
+  N_{\mathrm{F}}(t+h)=N_{\mathrm{F}}(t)+h[\lambda_{\mathrm{P}}N_{\mathrm{P}}(t) %
+  -\lambda_{\mathrm{F}} N_{\mathrm{F}}(t)]\,,
+  \end{cases}
+\end{equation}
+dove si è posto l'intervallo minimo temporale $h$ = 0,001 giorni, mentre %
+$N_{\mathrm{P}}(0) = \np{1E6}$ e $N_{\mathrm{F}}(0) = 0$.
+Il sistema è stato evoluto fino a $t$ = 100 giorni.
+In figura~\ref{fig:seculum} è mostrata l'attività nucleare calcolata con l'algoritmo di %
+Eulero.
+
+Con lo stesso metodo è stato verificato che la condizione di equilibrio è mantenuta, entro %
+l'errore massimo di \np{E-3}, almeno fino al tempo di dimezzamento dello \mbox{stronzio-90}.
+
+\begin{figure}
+  \centering
+    \input{seculum.tex}
+    \caption{Attività di \ap{90}Sr e \ap{90}Y simulate.}
+  \label{fig:seculum}
+\end{figure}

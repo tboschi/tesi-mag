@@ -1,0 +1,84 @@
+%Tesi triennale
+%Tommaso Boschi
+
+%preamble
+\documentclass[a4paper, usenatbib, 10pt]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian, english]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{natbib}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+%\usepackage{layaureo}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\geometry{a4paper, total={150mm, 247mm}, left=30mm, top=30mm,}
+\usepackage{pdfpages}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={.}}
+\usepackage{color}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{threeparttable}
+\usepackage{varwidth}
+\usepackage[autolanguage, np]{numprint}
+\captionsetup{tableposition=top,figureposition=bottom,font=footnotesize}
+\captionsetup{format=hang,labelfont={sf,bf}}
+%\usepackage[backend=biber]{biblatex}
+
+%\addbibresource{./one.bib}
+
+
+%\setlength{\headheight}{14pt}
+\begin{document}
+
+%Frontespissio
+\includepdf[pages={1}]{myfronte.pdf}
+\pagestyle{empty}
+
+%Front
+\frontmatter
+\input{dedica}
+
+\input{pref}
+
+\tableofcontents
+
+%Main
+\mainmatter
+
+\pagestyle{fancy}
+\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\fancyhf{}
+\fancyhead[LE]{\scshape Phase I of the ANNIE experiment}
+\fancyhead[RO]{\scshape \leftmark}
+\fancyfoot[CE,CO]{\thepage}
+
+\input{cap1}
+\input{cap2}
+\input{cap3}
+\input{cap4}
+\input{cap5}
+\input{cap6}
+
+\appendix
+%\input{app1}
+\input{app2}
+
+%Back
+\backmatter
+
+%Biblio
+\bibliographystyle{abbrv}
+\bibliography{one}
+%\printbibliography
+\end{document}

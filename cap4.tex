@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		CHAP 4		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter[Analaysis procedures]{Data Analysis procedures}
+\label{cha:4}
+This chapter deals with the data analysis techniques developed in order to study PMTs data.
+These methods focus on the rejection of background signals with respect to event signals which is %
+done with inidivual pulse analysis.
+Some of these procedures could be used in future pahses of the experiment, in particular %
+the ones with LAPPDs.
+
+Specification of runs
+As explained in chapter~\ref{cha:3}, the DAQ creates a new \emph{Run} everytime it is restarted.
+Due to being an R\&D phase, the DAQ has been improved in various occasion during data taking, %
+hence the size and the number of files of the \emph{Runs} are not constant.
+Every single file is a ROOT file containing a Tree and one of its branches helds the post-processed %
+buffer from the digitisers.
+The data array is scanned by the Analysis software, entry by entry.
+
+\textcolor{red}{How measurement are made.}
+
+\section{Inidivual pulse analysis}
+
+The Analysis software scans all the files which the \emph{Run} consists of.
+The data array is the time profile of the PMTs outputs.
+[Pic of time profile]
+The code looks for any peak above a certain voltage threshold, defining a time window %
+around it, of a predefined length.
+A length of 100 samples was chosen, resulting in a \np{0.8}~$\mu$s long window.
+The position of the peak inside this window was set to 20\% of its length.
+This set of data is called ``pulse'' and it's afterward post processed
+The length and the peak position were choosen in a way that the reflection peaks are counted as %
+one single pulse.
+
+Every pulse is analysed by the software and some quantities are infered from each.
+These values are:
+
+%\begin{center}
+%\begin{varwidth}{\textwidth}
+\begin{itemize}
+%  \item[Length] of the pulse array;
+%  \item[Trigger] number and PMT ID;
+  \item[\bfseries Baseline] is given by the average of first 10 points of the pulse; %
+    this value is then subtracted from the whole array.
+  \item[\bfseries Height] is the height of the peak (maximum) with respect to the zero.
+  \item[\bfseries Peak to valley] it is the time distance from the peak to the valley (minimum);
+  \item[\bfseries Start] is position of the 25\% of the rising edge of the pulse, estimated with %
+    precision using cubic interpolation\footnote{The algorithm looks for four points around the %
+    threshold which are used to define a cubic function. Using Newton's method, the time position %
+    is found.}.
+  \item[\bfseries Width] is the time that spans from Time to the 5\% of the falling edge %
+    of the pulse, calculated using the same algorithm employed for Time.
+  \item[\bfseries Charge] is the sum of the 5 points around peak, weighted by the bin width.
+  \item[\bfseries Energy] is the sum of the points form Time to Time+Width, with bin weight.
+  \item[\bfseries Area] is the area of the modulus of the pulse.
+  \item[\bfseries Time of flight] is the time difference between Time and RWM signal.
+  \item[\bfseries Previous] is the Time of the previous pulse, if from the same PMT.
+%  \item[If] VETO or both MRD layers were on;
+%  \item[The] whole pulse array;
+\end{itemize}
+%\end{varwidth}
+%\end{center}
+
+\textcolor{red}{Moreover, VETO and MRD layers coincidences are recorded.}
+
+\subsection{Event definition}
+
+For every Trigger, the time distribution of the peaks is also studied, since it helps to find %
+coincidences between PMTs.
+With the help of an histogram, an allowance of $\np{0,8}~\mu$s is given to count the coincidence %
+magnitude of the Event and an \emph{Event} is appointed to any cluster delimited by a bin %
+greater than a defined threshold up to the number of PMTs fired at the same time falls to zero.
+[insert event picture here]
+In order to estimate the precise time position of the event, a weighted average is done among bins.
+
+\textcolor{red}{Improve here!}
+{\color{blue}
+What can be counted as an event?
+Cosmic: it would be great to calculate the expected flux in the tank. Here?
+Beam: the pmts will only takes a snippet from the cherenkov cone. So?
+Radiation: this sucks.
+I could estimate the number of PMTs on for each scenarios.
+}
+\textcolor{red}{Place some pictures here and there.}
+
+
+\subsection{Signal and noise discrimination}
+I mean event from dark noise. No dark noise run was taken (empty tank, maybe when LAPPDs will be %
+installed).
+A time window is defined using the Event time position and it is used as a rejection interval.
+Every pulse that falls within this interval is designated as a ``signal''; otherwise it is ``noise''.
+Following this discrimination paradigm, two ROOT trees, one for signals and one for events, %
+are filled with the pulses features, along with the pulse shape itself.
+In ROOT file two trees are saved, tEvent and tNoise
