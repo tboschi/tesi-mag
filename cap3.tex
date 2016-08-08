@@ -90,6 +90,16 @@ its data transfer speed is quite fast: for instance the latest manifestation, %
 the VME320/2eSST protocol, can double the theoretical bandwidth of VME to 320MB/s.
 cite[http://www.vita.com/VME320-2eSST-Protocol].
 
+The crates are governed by a VME-based CPU board which runs Internet Rack Monitor software
+This latest version runs on the MVME162-22 cpu board with MC68040 cpu, 4MB dynamic ram, %
+0.5MB static ram, 1MB flash memory, ethernet interface, and support for up to four %
+IndustryPack daughter boards. 
+The latter allows connection to I/O signals via ribbon cables to digital and %
+analog interface boards mounted inside the IRM chassis. 
+The ethernet interface allows network connection and supports widely-used %
+Internet protocols that allow data request and setting access as well as alarm reporting, %
+all based upon the UDP (User Datagram Protocol) transport layer.
+
 The system consists of two types of VME module:
 \begin{itemize}
   \item 4-channel 500~MHz sampling pipeline 14 bit custom FADC cards, which primarily record %
@@ -182,11 +192,6 @@ Like most of the HEP experiments, even ANNIE requires real-time monitoring so as
 the DAQ system works flawlessly.
 This is achieved by the \emph{Monitor} tool, which updates a dedicated web-page with %
 random plots of data collected.
-The last too, \emph{Data recorder}, saves acquired data into a ROOT trees structure.
-Each entry corresponds to a spill, i.e. a trigger in the VME cards, and holds a 10000 long float %
-array containing the digitised time window.
-In the same entry, other values are stored (PMT number, spatial position, channel, card etc..).
-Among these, the TimeStamp is fetched from the ADC cards.
 
 \begin{figure}[]
   \centering
@@ -195,21 +200,47 @@ Among these, the TimeStamp is fetched from the ADC cards.
   \label{fig:anniedaq}
 \end{figure}
 
-A ToolChain has also been developed to address the VME crates.
-As illustrated in Fig.~\ref{fig:anniedaq}, the Tools contained in this Chains are
-\begin{enumerate}
-  \item Trigger sender;
-  \item Board reader;
-  \item Network send data;
-\end{enumerate}
+On the VME eletronics side, the Chain communicates with the VME CPU retrieving all the informations %
+about the cards and the trigger.
+The \emph{Trigger Sender} tool check the status of the VME controller.
+If the ADC are triggered, a trigger message is sent to the Main Chain.
+The data are dumped from the FPGA's buffer by the \emph{Board Reader} tool and %
+are sent to the Main Chain via ZeroMQ messaging over TCP.
 
-\emph{Trigger sender} is given by RWM.
-Talk about downsampling and buffer sizes.
-\emph{Board reader} gets data from ADC, ready to be sent.
-\emph{Network} send data over network.
-\textcolor{green}{Ask Ben, he should know.}
+The last tool of the Main Chain, \emph{Data recorder}, saves data into the following %
+ROOT tree structure:
+\begin{center}
+\begin{varwidth}{\textwidth}
+\begin{itemize}
+  \item[\bfseries LastSync :] time of data acquisition;
+  \item[\bfseries SequenceID :] incrementale number;
+  \item[\bfseries StartTime :] same as lastsync;
+  \item[\bfseries CardID :] number of ADC card;
+  \item[\bfseries Channels :] channel of ADC card;
+  \item[\bfseries PMTID :] global identifier of PMT (labelled from 1 to 60);
+  \item[\bfseries BufferSize :] size of the buffer per channel;
+  \item[\bfseries FullBufferSize :] size of the buffer per card;
+  \item[\bfseries Data :] array holding the full buffer.
+\end{itemize}
+\end{varwidth}
+\end{center}
 
-\textcolor{red}{Not finished yet. Have to talk about output format too.}
+Each entry corresponds to an acquisition of the full buffer from the cards saved in a 40000 long %
+float array, i.e. the digitised time profile of four consecutive 80~$\mu$s data set.
+The ROOT files are then post processed: the buffer is split and an entry is created for each %
+beam event and the precise time stamp is reconstructed.
+
+\textcolor{red}{Have to talk about output format too.}
+
+Provided that the spill's frequency is $\sim$15~Hz and four spills are acquired, the buffer %
+takes around a quarter of a second to fill.
+The longest portion of the chain to execute is the disk saving and it is meant to be done %
+between pulse trains, so as to minimse the number of spill lost.
+A whole execution of the chain lasts nearly a second, slightly less than the pulse train frequency.
+
+\textcolor{red}{Talk about speed of software.}
+
+
 
 \section{MRD Chain}
 \label{sec:3.2}
@@ -218,10 +249,10 @@ Talk about downsampling and buffer sizes.
 
 As explained in Sec.~\ref{sec:3.2}[edit to section of VME], the signal from the FACC %
 and two layers of the MRD are logically summed and read by the VME digitisers.
-The PMTs of these two detectors are meant to be read individually by both Time to Digital %
-Converters (TDC) and ADCs in future stages of the experiment.
-A third ToolChain has been developed to collect data from both the VETO and %
-the MRD's second and third layers.
+The PMTs of these two detectors are supposed to be read individually by both Time-to-Digital %
+Converters (TDC) and ADCs in future stages of the experiment and for this purpose %
+a third ToolChain has been developed to collect data from both the VETO and %
+the MRD's second and third layers (see section~ref).
 CAMAC electronic modules are employed for these two detectors: LeCroy 3377 modules for the time %
 digitisation, while LeCroy 4300B for analog conversion.
 
@@ -253,19 +284,15 @@ interface.
 For fast data acquisition applications the CCUSB has a built-in command list sequencer, called %
 \emph{command stack} with data buffering in a 22kB size FIFO.
 A XILINX Spartan 3 family FPGA performs all CCUSB logic and functions. 
-The MRD rate has been found to be quite low in this early stage (event rate \np{0.20}~Hz), since %
-only two layers are used.
-For these reasons, the command stack is not employed ,since the USB connection is fast enough %
-to address all the active cards. 
-
-
 \textcolor{red}{More on this?}
 
 
 \subsection{Software}
 
-A separate MRD DAQ has been created within the ToolDAQ Framework in order to acquire the MRD %
-and the forward Veto data.
+The thesis's work is mainly focused on the development of a dedicated data acquisition system %
+for the CAMAC electronics of the experiment.
+A separate MRD DAQ has been created from scratch within the ToolDAQ Framework in order %
+to acquire the MRD and the forward Veto data.
 These two detectors rely on the CAMAC electronics for front-end read out of the PMTs %
 signals and the USB controller vendor provides a C++ class to interface the controller with the %
 computer.
@@ -333,10 +360,42 @@ the clocks are synchronised to the same NTP server, which uses GPS time sources.
 With the help of the Fermilab spill database [ref here], the events from the two DAQs can be related %
 to each other.
 
-However, a time variable drift in the MRD TimeStamps has been found, likely due to imprecise %
-synchronisation with the NTP server (accuracy given to 30~ms). 
+This method is effective as long as the frequency of the chain exection is greater than the %
+spill freqeuncy.
+The frequency should be above the 15~Hz spill frequency in order not to miss any beam event.
+However the CAMAC event rate has been found to be quite low in this %
+early stage, around \np{0.20}~Hz\footnote{The rate is measured from output ROOT file, dividing %
+  the number of entries, i.e. events, by the time passed between the first and the last timestamp.}, %
+since only two layers of the MRD are used, in addition to the Veto.
+This suggest that the modules present data only the $\sim$\np{1.3}\% of the time.
+
+Concerning the MRD DAQ, the longest portion of the chain is the CAMAC addressing and data colleting.
+The software has been tested using software triggering, employing the test functions of the modules, %
+and counting the time required for \np{100000} repeated cycles with \np{1.3}\% firing probability; %
+the frequency was afterward estimated.
+The result is shown in Fig.~ref, where frequency vs number of channel is plotted for TDC only.
+It's clear that the frequency is well above the lower theoretical limit of 15.
+The limit is easily reached if the modules are hit full time and with 10 module to read, %
+corresponding to five layers of MRD for instance.
+
+\begin{figure}
+  \centering
+    \input{textdc.tex}
+    \caption{DAQ frequency reading TDCs with all channels hit, but \np{1.6}\% time occupancy.}
+  \label{fig:tdcfreq}
+\end{figure}
+
+
+
+For these reasons, the command stack of the CCUSB controller is not employed, %
+because the USB connection can provide fast enough communication to address all the active cards.
+
+Concerning the TimeStamp, a time variable drift in the MRD TimeStamps has been found, %
+likely due to imprecise synchronisation with the NTP server %
+(accuracy given to be less than 30~ms) which occurs every 1024~ms. 
 A post-processor has been written to fix the TimeStamps, identifing time patterns in the %
 spill spectrum and comparing them to the database information.
+In Fig.~ref the result of the synchronisation is shown.
 
 \textcolor{blue}{picture of spill sync would be nice.}
 
@@ -384,9 +443,10 @@ Final reconstruction of PMTs data and MRDs could be done in a post-processing st
 
 In view of the next phases of the experiment, an other DAQ-related issue is the memory storage.
 During early test runs, the digitiser would sample at a frequency of 500~MHz, but it has been %
-promptly downgraded to 15~MHz because of lack of long term memory storage.
-Noise is mostly shown in the 80~$\mu$s time window and the effective information is scarce.
+promptly downgraded to 125~MHz because of lack of long term memory storage.
+As a matter of fact, noise is mostly shown in the 80~$\mu$s time window and %
+the meaningful signal is limited short, compared to the time window.
 Considering that an high time resolution is pointless in the R\&D stage of the experiment, the %
 downgrade was established.
-Next phases would employ zero suppression method, which will definitely overcome storage needs.
-The preliminary data analysis undertaken can back up this decision, as explained in section~[ref].
+Soon, zero suppression method would be employed, which will definitely overcome storage needs.
+The preliminary data analysis undertaken can back this decision up, as explained in section~[ref].
