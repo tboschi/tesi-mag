@@ -2,13 +2,10 @@
 
 \chapter{The ANNIE Experiment}
 \label{cha:2}
-\textcolor{blue}{have to clean this too.}
 
-The \textbf{A}ccelerator \textbf{N}eutrino \textbf{N}eutron \textbf{I}nteraction %
-\textbf{E}xperiment (ANNIE) will provide a complementary measurement of final-state %
-neutron abundance from pure neutrino interactions and neutron yields in relation to %
-the energy and direction of final-state muons with respect to the original neutrino.
-ANNIE can accomplish this task, currently poorly-known and difficult to measure.
+Final-state neutron abundance from pure neutrino interactions in relation to the energy %
+and the direction of final-state muons with respect to the original neutrino %
+are currently poorly-known and difficult to measure.
 These combined data can be used to better constrain nuclear models of neutrino interaction %
 physics and are an essential input to Monte Carlo models, used for calculating %
 detection efficiencies, expected background rates, accurate limits, and confidence levels.
@@ -21,56 +18,198 @@ by the presence and number of final-state neutrons can provide physics analyses 
 handle for signal-background separation and even allow for discrimination between %
 different types of neutrino interactions.
 
-The ANNIE experiment consists of a small water Cherenkov detector, instrumented
-with both conventional photomultiplier tubes (PMTs) and eventually LAPPDs.
-A downstream Muon Range Detector (MRD) is also installed in the hall.
-Neutron tagging in Gadolinium-doped water may play a significant role
+\begin{wrapfigure}{L}{0.5\textwidth}
+  \centering
+  \includegraphics[scale=.2]{pics/logo_2}
+  \caption{Logo of the ANNIE experiment.}
+  \label{fig:logo}
+\end{wrapfigure}
+
+The \textbf{A}ccelerator \textbf{N}eutrino \textbf{N}eutron \textbf{I}nt\-er\-ac\-tion %
+\textbf{E}xperiment (ANNIE) will provide a complementary measurement of neutron yields in %
+neutrino-nucleon interactions.
+The ANNIE experiment is a prototype neutrino detector currently taking data at the %
+Fermi National Accelerator Laboratory (FNAL, Fermilab), in Chicago, USA.
+It consists of a small water Cherenkov detector, placed at the former location of %
+the SciBooNE experiment~ref[Phys. Rev. D 78 (2008) 112004] and %
+deployed on the intense Booster Neutrino Beam (BNB).
+An upstream forward Veto and a downstream Muon Range Detector (MRD) are also installed %
+in the hall.
+The experiment aims to be a test bed for many new technologies, as the gadolinium-doped water %
+and the use of early prototype Large Area Picosecond Photodetectors (LAPPDs).
+Neutron tagging in Gd-loaded water may play a significant role
 in reducing backgrounds from atmospheric neutrinos in next generation 
-proton-decay searches using megaton-scale Water Cherenkov detectors.
+proton-decay searches using megaton-scale Water Cherenkov detectors, like Hyper-Kamiokande~ref.
 Similar techniques might also be useful in the detection of supernova neutrinos. 
 Accurate determination of neutron tagging efficiencies will require a 
 detailed understanding of the number of neutrons produced by neutrino interactions 
 in water as a function of momentum transferred.
-ANNIE is mainly designed to measure the neutron yield of atmospheric neutrino interactions 
-in gadolinium-doped water.
-An innovative aspect of the ANNIE design is the use of precision timing to 
-localize interaction vertices in the small fiducial volume of the detector.
-We propose to achieve this by using early production of LAPPDs 
-(Large Area Picosecond Photodetectors).
+To achieve this task, an innovative aspect of the ANNIE design is the use of precision %
+timing to localize interaction vertices in the small fiducial volume of the detector.
 This experiment will be a first application of these devices demonstrating
 their feasibility for Water Cherenkov neutrino detectors.
 
-The ANNIE experiment is a prototype neutrino detector %
-currently taking data Fermilab USA.
-It aims to be a test bed %
-for many new technologies from Gd-doped water %
-interaction of neutrons to the use of early prototype %
-LAPPDs (Large Area Picosecond Photodetectors) %
-
-The ANNIE experiment consists of a small, economical Water Cherenkov detector, instrumented %
-with both conventional photomultiplier tubes (PMTs) and LAPPDs, and deployed on the intense %
-Booster Neutrino Beam (BNB) at Fermilab.
-The experiment is planned to proceed in two stages: 
+The experiment is planned to proceed in two stages, spread over five years:
 \begin{itemize}
-  \item[\bfseries Phase I] a partially-instrumented test-beam run using only PMTs %
-    for the purpose of measuring critical neutron backgrounds to the experiment;
+  \item[\bfseries Phase I] a partially-instrumented test-beam run using only Photomultipliers %
+    (PMTs) for the purpose of measuring critical neutron backgrounds to the experiment;
   \item[\bfseries Phase II] a longer run with a more fully-instrumented detector %
     where incremental research and development for the LAPPDs and %
     accompanying fast electronics will be fulfilled, as long as the expansion of the %
     photodetector coverage (both LAPPDs and PMTs) required.
 \end{itemize}
 
-Year 1 will focus on the R\&D, particularly tests of the first available LAPPDs in water.
+\emph{Year 1} will focus on the R\&D, particularly on the development of the Data Acquisition %
+system, along with the testing in water of the first model of LAPPD. 
 Installation of the first LAPPDs and a significant fraction of the additional PMTs, as %
-well as the calibration system, will take place in Year 2.
-Data-taking would commence in Year 3 and continue through Year 5, with the physics reach of %
-the detector increasing as the fraction of LAPPDs increases over time.
-Publication of derived results would occur by the end of Year 5.
+well as the calibration system, will take place in \emph{Year 2}.
+Data-taking would commence in \emph{Year 3} and continue through \emph{Year 5}, %
+with the physics reach of the detector improving as the fraction of LAPPDs increases over time.
+Publication of derived results would occur by the end of \emph{Year 5}.
 
+This thesis is placed at the beginning of \emph{Year 1}, where testing of the Phase I %
+experimental setup is tested and R\%D is undertaken.
 
-\section{Water tank}
+\section{Neutrino beam}
+
+ANNIE is run on axis from the \emph{Booster Neutrino Beam} (BNB), which deploys %
+\np{8.89}~GeV protons accelerated from the Fermilab booster operating at 15~Hz.
+The primary beam from the \emph{Linac} uses protons accelerated to 8 GeV kinetic energy %
+by the Fermilab booster. 
+Selected batches containing approximately \np{5e12} protons are extracted %
+and bent toward a beryillium target via dipole magnets.
+Each spill is composed of 81 bunches of protons, approximately 6~ns wide each %
+and 19~ns apart, for a total spill duration of $\np{1.6}~\mu$s.
+Beam proton trajectories and positions are monitored on a pulse-by-pulse basis.
+Upstream of the target, the primary proton beam is monitored on a pulse-by-pulse basis %
+using four systems: %
+two toroids measuring its intensity (protons-per-pulse), beam position monitors %
+(BPM) and a multiwire chamber determining the beam width and position, %
+and a resistive wall monitor (RWM) measuring both the time and intensity of the beam spills.
+A logic signal is also generated by the last device for every intensity peak.
+It is employed to trigger the experiment in correspondence of each spill.
+The BNB is dealt in detail in the appendix~\ref{app:A}.
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+%\begin{figure}[]
+  \centering
+  \includegraphics[scale=.2]{pics/bnbhorn}
+  \caption{BNB horn system.}
+  \label{fig:bnbhorn}
+\end{wrapfigure}
+
+Hadronic interactions of the protons with the target material produce a beam of %
+secondary mesons, mostly pions and kaons. 
+A magnetic focusing horn, shown in Fig.~\ref{fig:bnbhorn}, surrounds the beryllium target, %
+bending and sign-selecting the secondary particles emitted along the direction pointing to the hall.
+The focusing is produced by the toroidal magnetic field present in the air volume %
+between the horn’s two coaxial conductors made of aluminum alloy. 
+The beam of focused, secondary mesons emerging from the target/horn region is further collimated, %
+via passive shielding, and allowed to decay into neutrinos in a cylindrical decay %
+region filled with air at atmospheric pressure, 50~m long and 90~cm in radius. 
+
+The polarity of the horn current flow can be (and has been) switched, in order to %
+focus negatively charged mesons, and therefore produce an antineutrino instead of a neutrino beam.
+The $\pi^{\pm}$ mesons have a mass of \np{139.6}~MeV and a mean lifetime of \np{2.6e-8}~s.
+The primary decay mode of a pion, with a branching fraction of \np{99,9877}\,\%, is a leptonic %
+decay into a muon and a muon neutrino:
+\begin{align}
+  \pi^+ &\rightarrow \mu^+ \, \nu_\mu \\
+  \pi^- &\rightarrow \mu^- \, \bar{\nu}_\mu
+\end{align}
+The second most common decay mode of a pion, with a branching fraction of \np{0.0123}\,\%, %
+is also a leptonic decay into an electron and the corresponding electron antineutrino:
+\begin{align}
+  \pi^+ &\rightarrow e^+ \, \nu_e \\
+  \pi^- &\rightarrow e^- \, \bar{\nu}_e
+\end{align}
+
+In spite of the considerable differences in the space momentum, the suppression of the %
+electronic decay mode with respect to the muonic one is a well known effect, called %
+\emph{helicity suppression}: due to the great mass of the muon ($m_\mu = \np{105.658}$~MeV) %
+compared to the electron ($m_e = \np{0.510}$~MeV), the helicity-chirality correspondence %
+is stronger for the latter.
+Given that the $\pi$ mesons are spinless, neutrinos are left-handed, and antineutrinos are %
+right-handed, the muonic channel is preferred because of spin and linear momentum preservation.
+The suppression of the electronic decay mode with respect to the muonic one is given %
+approximately within radiative corrections by the ratio:
+\begin{equation}
+  R_\pi = \Bigl ( \frac{m_e}{m_\mu} \Bigr )^2 
+  \Bigl (\frac{m_\pi^2 - m_e^2}{m_\pi^2 - m_\mu^2} \Bigr )
+  = \np{1.283e-4}
+\end{equation}
+
+\textcolor{red}{Have to add something about muon decay here.}
+A beam absorber located at the end of the decay region stops the hadronic and muonic %
+component of the beam, and only an almost pure neutrino beam pointing towards %
+the detector remains.
+
+\textcolor{red}{From SciBooNE - charged current etc.}
+Neutrino flux predictions are the same produced by the SciBooNE collaboration, obtained via a %
+\textsc{geant4}-based beam Monte Carlo simulation.
+The same simulation code developed by the MiniBooNE Collaboration is used [24], %
+where a realistic description of the geometry and materials present %
+in the BNB target hall and decay region is used.
+Primary protons are generated according to the expected beam optics properties upstream 
+of the target.
+The interactions of primary protons with the beryllium target are simulated according %
+to state-of-the-art hadron interaction data. 
+Of particular importance for this analysis is a $\pi^+$ production in proton-beryllium interactions, %
+which uses experimental input from the HARP [25] and BNL E910 [26] experiments. 
+Production of secondary protons, neutrons, charged pions, and charged and neutral %
+kaons is taken into account, and elastic and quasielastic scattering of protons in the target %
+are also simulated.
+Particles emanating from the primary proton-beryllium interaction in the target are %
+then propagated within the \textsc{geant4} framework, which accounts for all relevant %
+physics processes. 
+Given the importance of the target (beryillium and alluminum) hadronic reactions, these are %
+described by custom models, while other hadronic processes %
+and all electromagnetic processes (energy loss, multiple scattering, %
+effect of horn magnetic field, etc.) are described according to default \textsc{geatn4} physics lists.
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+  \centering
+  \includegraphics[scale=0.25]{pics/fluxprediction}
+  \caption{Neutrino flux predictions from the \textsc{geant4}/FORTRAN simulation.}
+  \label{fig:fluxp}
+\end{wrapfigure}
+
+A second, FORTRAN-based Monte Carlo code is responsible for generating the neutrino %
+kinematics distributions from meson and muon decays, and for obtaining the final neutrino %
+fluxes extrapolated to the detector hall with negligible beam Monte Carlo statistical errors. 
+Once produced by the simulation, neutrinos are extrapolated along straight lines %
+toward the detector and all neutrinos whose traces cross any part of the active volume are %
+considered for the flux predictions.
+Based on accurate survey data, the distance between the center of the beryllium %
+target and the center of the SciBar detector is taken to be \np{99.9}~m, %
+with the detector located on beam axis within a tolerance of a few centimeters. 
+
+The neutrino flux prediction at the detector location and as a function %
+of neutrino energy is shown in Fig.~\ref{fig:fluxp}.
+A total neutrino flux per proton on target of \np{2.2e-8}~cm$^{-2}$ is expected at the %
+hall location and in neutrino running mode (positive horn polarity), with %
+a mean neutrino energy of \np{0.7}~GeV. 
+The flux is dominated by muon neutrinos (93\,\% of total), with small contributions from %
+muon antineutrinos (6.4\,\%), and electron neutrinos and antineutrinos (0.6\,\% in total). 
+For the neutrino flux predictions, no information from BNB %
+(SciBooNE or MiniBooNE) neutrino data was used as experimental input.
+
+\section{The Hall}
+
+The experiment is set up in the former location of the SciBooNE experiment~refagain?, %
+8~m below the surface and the 100~m from the BNBtarget.
+Already exisiting instrumentation in the hall is borrowed by the ANNIE experiment.
+
+\subsection{Water tank}
 \label{2.2}
 \textcolor{red}{tank = PMTs, water, future LAPPDs and Gd (NCV). Very messy now}
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+  \centering
+  \includegraphics[scale=0.25]{pics/ANNIEreduced}
+  \caption{Schematic of the experimental hall.}
+  \label{fig:anniehall}
+\end{wrapfigure}
 
 The main component of the experiment is the water tank, installed in the SciBooNE hall %
 at Fermilab.
@@ -82,7 +221,7 @@ Photonis Planacon MCP-PMT and 64 times that of an 8k Hamamatsu 1 inch tube).
 These early LAPPDs will be produced in small batches over a period of several years, %
 with the first two LAPPDs arriving no later than September 2016 and 5-8 more tiles in September 2017.
 Specifications of the LAPPDs are derived from prior tests: time resolutions below 100 psec, %
-spatial resolutions below 1~cm, and gains above 1x10 7 [21], as well as 20\% quantum %
+spatial resolutions below 1~cm, and gains above 1x10 7 [21], as well as 20\,\% quantum %
 efficiency photocathodes and good gain uniformity [32].
 The LAPPD purchase by the ANNIE collaboration represents a technology investment that will %
 pay out past its experimental lifecycle.
@@ -105,7 +244,7 @@ In order to guarantee physics results from this effort independently of the stat
 production, an alternative choice for light detectors will be developed in parallel.
 The optimal choice at this stage would appear to be the Hamamatsu H11934-200 ultra %
 bialkali 1-inch PMTs.
-With a quantum efficiency of 43\%, comparable photon collection efficiencies to %
+With a quantum efficiency of 43\,\%, comparable photon collection efficiencies to %
 LAPPDs can be achieved with less spatial coverage.
 The combination of 270 psec time resolutions and fine granularity of these detectors %
 provides capabilities comparable to those discussed in Sec 3.4 (see Fig 6).
@@ -125,13 +264,13 @@ Gadolinium in water (NCV)
 EDGAS and other experiments.
 The Super-Kamiokande (SK) [1] is the largest light water Cherenkov detector %
 that has been successfully observing solar, atmospheric and accelerator neutrinos.
-Recently the addition of 0.2\% of a water soluble gadolinium (Gd) compound to SK %
+Recently the addition of 0.2\,\% of a water soluble gadolinium (Gd) compound to SK %
 has been proposed [2].
 This modification can greatly improve the detection sensitivity of anti-electron neutrinos.
 The inverse beta interaction in the water, emits a positron and a neutron.
 The positron, radiating Cherenkov photons, is immediately detected.
 The neutron is quickly thermalized in the water, and is then captured by Gd with a %
-probability of 90\%.
+probability of 90\,\%.
 Upon capturing a neutron the Gd emits 3-4 gamma rays having a total energy of %
 about 8 MeV.
 The time and spatial correlation of the positron and neutron capture events (20 us and 4 cm) %
@@ -155,7 +294,7 @@ List of pmts employed??
 
 Talk about LAPPDs
 
-\section[MRD and VETO]{Muon Range Detector+Veto}
+\subsection[MRD and VETO]{Muon Range Detector+Veto}
 \label{2.3}
 \textcolor{red}{mostly ok, I guess I have every information.}
 
