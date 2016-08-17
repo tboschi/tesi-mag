@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		CHAP 4		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter[Analaysis procedures]{Data Analysis procedures}
+\chapter{Data Analysis procedures}
 \label{cha:4}
 This chapter deals with the data analysis techniques developed in order to study PMTs data.
 These methods focus on the rejection of background signals with respect to event signals which is %
@@ -18,11 +18,20 @@ The data array is scanned by the Analysis software, entry by entry.
 
 \textcolor{red}{How measurement are made.}
 
-\section{Inidivual pulse analysis}
-
+\section{Data structure}
+The Main DAQ creates ROOT file containing the PMT data collected (see section~ref).
+The buffer retrieved from the VME bards is properly split for each trigger signal, in that each %
+set of data consists of 80~$\mu$s worth of digitised signal.
+Each file holds 383 full buffers and this translates to 1532 trigger: the effective time held in %
+a single file is \np{122.56}~ms.
 The Analysis software scans all the files which the \emph{Run} consists of.
 The data array is the time profile of the PMTs outputs.
-[Pic of time profile]
+
+\textcolor{red}{Picture of full buffer and post processed}
+
+
+\section{Inidivual pulse analysis}
+
 The code looks for any peak above a certain voltage threshold, defining a time window %
 around it, of a predefined length.
 A length of 100 samples was chosen, resulting in a \np{0.8}~$\mu$s long window.
@@ -60,6 +69,15 @@ These values are:
 %\end{varwidth}
 %\end{center}
 
+\begin{figure}
+  \centering
+  \def\svgwidth{0.45\textwidth}
+  \subfloat[To be fixed.]{\import{pics/}{timepoints.pdf_tex}} \qquad
+  \def\svgwidth{0.45\textwidth}
+  \subfloat[To be fixed.]{\import{pics/}{areapoints.pdf_tex}}
+  \caption{Explanation of the pulse analysis parameters.}
+\end{figure}
+
 \textcolor{red}{Moreover, VETO and MRD layers coincidences are recorded.}
 
 \subsection{Event definition}
@@ -91,3 +109,29 @@ Every pulse that falls within this interval is designated as a ``signal''; other
 Following this discrimination paradigm, two ROOT trees, one for signals and one for events, %
 are filled with the pulses features, along with the pulse shape itself.
 In ROOT file two trees are saved, tEvent and tNoise
+
+\section{Run selection}
+
+For the analysis, three couples of runs were selected:
+\begin{itemize}
+  \item[\bfseries R93/R94] beam off, trigger random	
+  \item[\bfseries R120/R121] after card synchronisation	
+  \item[\bfseries R145/R146] PMT mounted on NCV		
+\end{itemize}
+
+\begin{center}
+  \small
+  \begin{tabular}{crcrr}
+    \toprule
+    \textbf{Run} & \textbf{Data size}	& N of files	& N of Triggers	& Total time	\\
+    		 &	(MB)		&		&		& (ms)	\\
+    \midrule
+      93		 & $ \np{65027.961} $	& 88	& \np{134816}	& \np{10785.280}	\\
+      94		 & $ \np{41102.486} $	& 54	& \np{82728}	& \np{6618.240}	\\
+      120		 & $ \np{19887.893} $	& 43	& \np{65876}	& \np{5270.080}	\\
+      121		 & $ \np{6735.270}  $	& 15	& \np{22980}	& \np{1838.400}	\\
+      145		 & $ \np{37204.525} $	& 80	& \np{122560}	& \np{9804.800}	\\
+      146		 & $ \np{39050.909} $	& 84	& \np{128688}	& \np{10295.040}	\\
+    \bottomrule
+  \end{tabular}
+\end{center}

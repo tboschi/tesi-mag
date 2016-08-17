@@ -1,0 +1,1497 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1024"
+   height="768"
+   viewBox="0 0 1024 768"
+   id="svg22193"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="areapoints.pdf">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="746"
+     id="namedview22608"
+     showgrid="false"
+     inkscape:zoom="1.2291667"
+     inkscape:cx="542.59766"
+     inkscape:cy="160.49816"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg22193"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata22612">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Gnuplot</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs22610">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect6418"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect6414"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect6410"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect6348"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow2Sstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Sstart"
+       style="overflow:visible">
+      <path
+         id="path4585"
+         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) translate(-2.3,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3271"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Send"
+       style="overflow:visible;">
+      <path
+         id="path12988"
+         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path12958"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mstart"
+       style="overflow:visible">
+      <path
+         id="path12961"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.4) translate(10,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect24547"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect24487"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect24455"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect24437"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect22694"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow2SstartY"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2SstartY"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path18646"
+         style="fill:#00a134;fill-rule:evenodd;stroke:#00a134;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(0.3,0,0,0.3,-0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2SendW"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2SendW"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path18649"
+         style="fill:#00a134;fill-rule:evenodd;stroke:#00a134;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect16699"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow2Sstartq"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Sstartq"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path19527"
+         style="fill:#ff5300;fill-rule:evenodd;stroke:#ff5300;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(0.3,0,0,0.3,-0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send2"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send2"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path19530"
+         style="fill:#ff5300;fill-rule:evenodd;stroke:#ff5300;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect19127"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow2Send2I"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send2I"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path23431"
+         style="stroke-width:0.625;stroke-linejoin:round;stroke:#ff0000;fill-rule:evenodd;fill:#ff0000"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send2I"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send2I-7"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path23431-7"
+         style="fill:#ff0000;fill-rule:evenodd;stroke:#ff0000;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect22694-9"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow2Send2Id"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send2Id"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path23953"
+         style="stroke-linejoin:round;stroke:#0000ff;stroke-width:0.625;fill:#0000ff;fill-rule:evenodd"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Sstartq"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Sstartq-7"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path19527-6"
+         style="fill:#ff5300;fill-rule:evenodd;stroke:#ff5300;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(0.3,0,0,0.3,-0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send2"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send2-0"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path19530-1"
+         style="fill:#ff5300;fill-rule:evenodd;stroke:#ff5300;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect19127-0"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow2SendH"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2SendH"
+       style="overflow:visible;">
+      <path
+         id="path25399"
+         style="stroke-linejoin:round;stroke:#ff0047;stroke-width:0.62500000;fill:#ff0047;fill-rule:evenodd"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2SendHn"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2SendHn"
+       style="overflow:visible;">
+      <path
+         id="path25964"
+         style="stroke-linejoin:round;fill-rule:evenodd;stroke:#800080;stroke-width:0.62500000;fill:#800080"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2SendHn"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2SendHn-9"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path25964-7"
+         style="fill:#800080;fill-rule:evenodd;stroke:#800080;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect24547-1"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow2Sstartu"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Sstartu"
+       style="overflow:visible">
+      <path
+         id="path5106"
+         style="stroke-linejoin:round;stroke:#00ffff;stroke-width:0.62500000;fill:#00ffff;fill-rule:evenodd"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) translate(-2.3,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Sendd"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Sendd"
+       style="overflow:visible;">
+      <path
+         id="path5109"
+         style="stroke-linejoin:round;stroke:#00ffff;stroke-width:0.62500000;fill:#00ffff;fill-rule:evenodd"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Sstartu"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Sstartu-7"
+       style="overflow:visible">
+      <path
+         id="path5106-5"
+         style="fill:#00ffff;fill-rule:evenodd;stroke:#00ffff;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(0.3,0,0,0.3,-0.69,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Sendd"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Sendd-3"
+       style="overflow:visible">
+      <path
+         id="path5109-5"
+         style="fill:#00ffff;fill-rule:evenodd;stroke:#00ffff;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3271-6"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow2Sstartuy"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Sstartuy"
+       style="overflow:visible">
+      <path
+         id="path5732"
+         style="stroke-linejoin:round;fill-rule:evenodd;stroke:#800080;stroke-width:0.62500000;fill:#800080"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) translate(-2.3,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Senddw"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Senddw"
+       style="overflow:visible;">
+      <path
+         id="path5735"
+         style="stroke-linejoin:round;fill-rule:evenodd;stroke:#800080;stroke-width:0.62500000;fill:#800080"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+  </defs>
+  <title
+     id="title22195">Gnuplot</title>
+  <desc
+     id="desc22197">Produced by GNUPLOT 4.6 patchlevel 4 </desc>
+  <path
+     style="fill:#ffff00;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.55327868"
+     d="m 324.40678,683.79661 c 6.23727,-0.13632 12.47456,-0.27191 18.71187,-0.40678 6.30507,-0.13633 12.61015,-0.27193 18.91525,-0.40678 l 18.71187,-2.23729 18.91525,-13.83051 18.10169,-160.88135 19.11865,-433.627125 c 3.77849,101.627465 10.08618,203.160875 18.91525,304.474575 5.37255,61.65008 11.6786,123.21881 18.91526,184.67797 l 18.30508,63.25424 18.30509,27.05085 19.32203,13.62711 18.1017,6.1017 c 6.24576,3.71461 12.48307,7.44344 18.71186,11.18644 6.51783,3.91669 13.02633,7.84891 19.52543,11.79661 l 18.91525,6.50848 18.50847,3.25423 c 6.17167,0.21829 12.34146,0.48949 18.50848,0.81356 6.3055,0.33135 12.60813,0.71798 18.91525,1.01695 6.2362,0.29561 12.47628,0.5055 18.71187,0.81356 6.24318,0.30844 12.4815,0.71529 18.71186,1.22034 6.10226,0.0425 12.20528,-0.0253 18.30509,-0.20339 6.24068,-0.18217 12.47746,-0.47972 18.71186,-0.81356 6.36997,-0.3411 12.74024,-0.72019 19.11865,-0.81356 6.3051,-0.0923 12.61042,0.0947 18.91525,0.20339 6.16898,0.10633 12.34012,0.13764 18.50848,0 6.51666,-0.14541 13.02934,-0.47945 19.52542,-1.01695 5.97037,-0.494 11.92579,-1.15975 17.8983,-1.62712 6.2254,-0.48716 12.46768,-0.75856 18.71187,-0.81356 l 18.71186,1.22034 18.91526,7.11865 18.91525,3.8644 18.71187,-0.61017 18.30508,-14.23728 18.91526,-5.28814 c 6.30016,-0.37282 12.60634,-0.64405 18.91525,-0.81356 6.30345,-0.16936 12.60962,-0.23717 18.91525,-0.20339 l 0,-10.37288 -674.84746,0"
+     id="path6416"
+     inkscape:path-effect="#path-effect6418"
+     inkscape:original-d="m 324.40678,683.79661 18.71187,-0.40678 18.91525,-0.40678 18.71187,-2.23729 18.91525,-13.83051 18.10169,-160.88135 19.11865,-433.627125 18.91525,304.474575 18.91526,184.67797 18.30508,63.25424 18.30509,27.05085 19.32203,13.62711 18.1017,6.1017 18.71186,11.18644 19.52543,11.79661 18.91525,6.50848 18.50847,3.25423 18.50848,0.81356 18.91525,1.01695 18.71187,0.81356 18.71186,1.22034 18.30509,-0.20339 18.71186,-0.81356 19.11865,-0.81356 18.91525,0.20339 18.50848,0 19.52542,-1.01695 17.8983,-1.62712 18.71187,-0.81356 18.71186,1.22034 18.91526,7.11865 18.91525,3.8644 18.71187,-0.61017 18.30508,-14.23728 18.91526,-5.28814 18.91525,-0.81356 18.91525,-0.20339 0,-10.37288 z"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#1d96ff;fill-opacity:0.47540984;stroke:none"
+     d="M 414.91588,684.15391 414.62824,536.16485 418.2237,505.963 437.24262,72.206922 c 4.08503,101.838418 10.44322,203.585648 19.06826,305.140368 5.21933,61.45449 11.26866,122.83848 18.14579,184.12959 l 18.26493,62.99243 18.40874,27.32548 19.27166,13.3751 17.83347,6.32801 0,12.60379 -133.31959,0.0522"
+     id="path6412"
+     inkscape:path-effect="#path-effect6414"
+     inkscape:original-d="m 414.91588,684.15391 -0.28764,-147.98906 3.59546,-30.20185 19.01892,-433.756078 19.06826,305.140368 18.14579,184.12959 18.26493,62.99243 18.40874,27.32548 19.27166,13.3751 17.83347,6.32801 0,12.60379 z"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccccccccc" />
+  <path
+     style="fill:#ff0097;fill-opacity:0.45081967;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 437.32515,71.903411 c 4.05772,101.638449 10.36486,203.187079 18.91525,304.546489 5.19446,61.57699 11.21675,123.08415 18.06469,184.49925 l 0,123.06095 -74.63395,0 0,-17.40202 18.12111,-161.07653 19.5329,-433.628139"
+     id="path6408"
+     inkscape:path-effect="#path-effect6410"
+     inkscape:original-d="m 437.32515,71.903411 18.91525,304.546489 18.06469,184.49925 0,123.06095 -74.63395,0 0,-17.40202 18.12111,-161.07653 z"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccccc" />
+  <g
+     id="gnuplot_canvas">
+    <rect
+       x="0"
+       y="0"
+       width="1024"
+       height="768"
+       fill="none"
+       id="rect22200" />
+    <defs
+       id="defs22202">
+      <circle
+         id="gpDot"
+         r="0.5"
+         stroke-width="0.5" />
+      <path
+         id="gpPt0"
+         stroke-width="0.222"
+         stroke="currentColor"
+         d="M-1,0 h2 M0,-1 v2" />
+      <path
+         id="gpPt1"
+         stroke-width="0.222"
+         stroke="currentColor"
+         d="M-1,-1 L1,1 M1,-1 L-1,1" />
+      <path
+         id="gpPt2"
+         stroke-width="0.222"
+         stroke="currentColor"
+         d="M-1,0 L1,0 M0,-1 L0,1 M-1,-1 L1,1 M-1,1 L1,-1" />
+      <rect
+         id="gpPt3"
+         stroke-width="0.222"
+         stroke="currentColor"
+         x="-1"
+         y="-1"
+         width="2"
+         height="2" />
+      <rect
+         id="gpPt4"
+         stroke-width="0.222"
+         stroke="currentColor"
+         fill="currentColor"
+         x="-1"
+         y="-1"
+         width="2"
+         height="2" />
+      <circle
+         id="gpPt5"
+         stroke-width="0.222"
+         stroke="currentColor"
+         cx="0"
+         cy="0"
+         r="1" />
+      <use
+         xlink:href="#gpPt5"
+         id="gpPt6"
+         fill="currentColor"
+         stroke="none" />
+      <path
+         id="gpPt7"
+         stroke-width="0.222"
+         stroke="currentColor"
+         d="M0,-1.33 L-1.33,0.67 L1.33,0.67 z" />
+      <use
+         xlink:href="#gpPt7"
+         id="gpPt8"
+         fill="currentColor"
+         stroke="none" />
+      <use
+         xlink:href="#gpPt7"
+         id="gpPt9"
+         stroke="currentColor"
+         transform="rotate(180)" />
+      <use
+         xlink:href="#gpPt9"
+         id="gpPt10"
+         fill="currentColor"
+         stroke="none" />
+      <use
+         xlink:href="#gpPt3"
+         id="gpPt11"
+         stroke="currentColor"
+         transform="rotate(45)" />
+      <use
+         xlink:href="#gpPt11"
+         id="gpPt12"
+         fill="currentColor"
+         stroke="none" />
+    </defs>
+    <g
+       style="fill:none; color:white; stroke:black; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22218" />
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22220" />
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22222">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M62.2,684.3 L999.0,684.3  h0.01"
+         id="path22224" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22226">
+      <path
+         stroke="black"
+         d="M62.2,684.3 L71.2,684.3  h0.01"
+         id="path22228" />
+      <g
+         transform="translate(53.9,688.8)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+         id="g22230">
+        <text
+           id="text22232">
+          <tspan
+             id="tspan22234"> 0</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22236">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M62.2,588.9 L999.0,588.9  h0.01"
+         id="path22238" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22240">
+      <path
+         stroke="black"
+         d="M62.2,588.9 L71.2,588.9  h0.01"
+         id="path22242" />
+      <g
+         transform="translate(53.9,593.4)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+         id="g22244">
+        <text
+           id="text22246">
+          <tspan
+             id="tspan22248"> 0.02</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22250">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M62.2,493.6 L999.0,493.6  h0.01"
+         id="path22252" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22254">
+      <path
+         stroke="black"
+         d="M62.2,493.6 L71.2,493.6  h0.01"
+         id="path22256" />
+      <g
+         transform="translate(53.9,498.1)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+         id="g22258">
+        <text
+           id="text22260">
+          <tspan
+             id="tspan22262"> 0.04</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22264">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M62.2,398.2 L999.0,398.2  h0.01"
+         id="path22266" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22268">
+      <path
+         stroke="black"
+         d="M62.2,398.2 L71.2,398.2  h0.01"
+         id="path22270" />
+      <g
+         transform="translate(53.9,402.7)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+         id="g22272">
+        <text
+           id="text22274">
+          <tspan
+             id="tspan22276"> 0.06</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22278">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M62.2,302.8 L999.0,302.8  h0.01"
+         id="path22280" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22282">
+      <path
+         stroke="black"
+         d="M62.2,302.8 L71.2,302.8  h0.01"
+         id="path22284" />
+      <g
+         transform="translate(53.9,307.3)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+         id="g22286">
+        <text
+           id="text22288">
+          <tspan
+             id="tspan22290"> 0.08</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22292">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M62.2,207.4 L999.0,207.4  h0.01"
+         id="path22294" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22296">
+      <path
+         stroke="black"
+         d="M62.2,207.4 L71.2,207.4  h0.01"
+         id="path22298" />
+      <g
+         transform="translate(53.9,211.9)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+         id="g22300">
+        <text
+           id="text22302">
+          <tspan
+             id="tspan22304"> 0.1</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22306">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M62.2,112.1 L999.0,112.1  h0.01"
+         id="path22308" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22310">
+      <path
+         stroke="black"
+         d="M62.2,112.1 L71.2,112.1  h0.01"
+         id="path22312" />
+      <g
+         transform="translate(53.9,116.6)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+         id="g22314">
+        <text
+           id="text22316">
+          <tspan
+             id="tspan22318"> 0.12</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22320">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M62.2,16.7 L999.0,16.7  h0.01"
+         id="path22322" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22324">
+      <path
+         stroke="black"
+         d="M62.2,16.7 L71.2,16.7  h0.01"
+         id="path22326" />
+      <g
+         transform="translate(53.9,21.2)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+         id="g22328">
+        <text
+           id="text22330">
+          <tspan
+             id="tspan22332"> 0.14</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22334">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M62.2,732.0 L62.2,16.7  h0.01"
+         id="path22336" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22338">
+      <path
+         stroke="black"
+         d="M62.2,732.0 L62.2,723.0  h0.01"
+         id="path22340" />
+      <g
+         transform="translate(62.2,754.5)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+         id="g22342">
+        <text
+           id="text22344">
+          <tspan
+             id="tspan22346"> 0</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22348">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M179.3,732.0 L179.3,16.7  h0.01"
+         id="path22350" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22352">
+      <path
+         stroke="black"
+         d="M179.3,732.0 L179.3,723.0  h0.01"
+         id="path22354" />
+      <g
+         transform="translate(179.3,754.5)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+         id="g22356">
+        <text
+           id="text22358">
+          <tspan
+             id="tspan22360"> 0.05</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22362">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M296.4,732.0 L296.4,16.7  h0.01"
+         id="path22364" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22366">
+      <path
+         stroke="black"
+         d="M296.4,732.0 L296.4,723.0  h0.01"
+         id="path22368" />
+      <g
+         transform="translate(296.4,754.5)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+         id="g22370">
+        <text
+           id="text22372">
+          <tspan
+             id="tspan22374"> 0.1</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22376">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M413.5,732.0 L413.5,16.7  h0.01"
+         id="path22378" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22380">
+      <path
+         stroke="black"
+         d="M413.5,732.0 L413.5,723.0  h0.01"
+         id="path22382" />
+      <g
+         transform="translate(413.5,754.5)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+         id="g22384">
+        <text
+           id="text22386">
+          <tspan
+             id="tspan22388"> 0.15</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22390">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M530.6,732.0 L530.6,16.7  h0.01"
+         id="path22392" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22394">
+      <path
+         stroke="black"
+         d="M530.6,732.0 L530.6,723.0  h0.01"
+         id="path22396" />
+      <g
+         transform="translate(530.6,754.5)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+         id="g22398">
+        <text
+           id="text22400">
+          <tspan
+             id="tspan22402"> 0.2</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22404">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M647.7,732.0 L647.7,16.7  h0.01"
+         id="path22406" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22408">
+      <path
+         stroke="black"
+         d="M647.7,732.0 L647.7,723.0  h0.01"
+         id="path22410" />
+      <g
+         transform="translate(647.7,754.5)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+         id="g22412">
+        <text
+           id="text22414">
+          <tspan
+             id="tspan22416"> 0.25</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22418">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M764.8,732.0 L764.8,16.7  h0.01"
+         id="path22420" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22422">
+      <path
+         stroke="black"
+         d="M764.8,732.0 L764.8,723.0  h0.01"
+         id="path22424" />
+      <g
+         transform="translate(764.8,754.5)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+         id="g22426">
+        <text
+           id="text22428">
+          <tspan
+             id="tspan22430"> 0.3</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22432">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M881.9,732.0 L881.9,16.7  h0.01"
+         id="path22434" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22436">
+      <path
+         stroke="black"
+         d="M881.9,732.0 L881.9,723.0  h0.01"
+         id="path22438" />
+      <g
+         transform="translate(881.9,754.5)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+         id="g22440">
+        <text
+           id="text22442">
+          <tspan
+             id="tspan22444"> 0.35</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22446">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         class="gridline"
+         d="M999.0,732.0 L999.0,16.7  h0.01"
+         id="path22448" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22450">
+      <path
+         stroke="black"
+         d="M999.0,732.0 L999.0,723.0  h0.01"
+         id="path22452" />
+      <g
+         transform="translate(999.0,754.5)"
+         style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+         id="g22454">
+        <text
+           id="text22456">
+          <tspan
+             id="tspan22458"> 0.4</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:none; color:gray; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22460">
+      <path
+         stroke="gray"
+         stroke-dasharray=" 2,4"
+         d="M62.2,684.3 L999.0,684.3 M62.2,732.0 L62.2,16.7  h0.01"
+         id="path22462" />
+    </g>
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22464">
+      <path
+         stroke="black"
+         d="M62.2,16.7 L62.2,732.0 L999.0,732.0 L999.0,16.7 L62.2,16.7 Z  h0.01"
+         id="path22466" />
+    </g>
+    <g
+       id="gnuplot_plot_1">
+      <title
+         id="title22469">gnuplot_plot_1</title>
+      <g
+         style="fill:none; color:white; stroke:black; stroke-width:2.00; stroke-linecap:butt; stroke-linejoin:miter"
+         id="g22471" />
+      <g
+         style="fill:none; color:green; stroke:currentColor; stroke-width:2.00; stroke-linecap:butt; stroke-linejoin:miter"
+         id="g22473">
+        <path
+           stroke="red"
+           stroke-dasharray=" 5,8"
+           d="M347.0,732.0 L347.3,729.8 L348.2,723.1 L349.1,716.8 L350.1,711.0 L351.0,705.7 L352.0,700.8 L352.9,696.3    L353.8,692.2 L354.8,688.6 L355.7,685.3 L356.6,682.3 L357.6,679.7 L358.5,677.4 L359.5,675.5 L360.4,673.8    L361.3,672.5 L362.3,671.3 L363.2,670.5 L364.2,669.9 L365.1,669.5 L366.0,669.3 L367.0,669.2 L367.9,669.4    L368.8,669.7 L369.8,670.2 L370.7,670.8 L371.7,671.5 L372.6,672.3 L373.5,673.1 L374.5,674.1 L375.4,675.0    L376.3,676.0 L377.3,677.1 L378.2,678.1 L379.2,679.1 L380.1,680.1 L381.0,681.0 L382.0,681.9 L382.9,682.7    L383.8,683.4 L384.8,684.0 L385.7,684.4 L386.7,684.8 L387.6,684.9 L388.5,684.9 L389.5,684.7 L390.4,684.4    L391.3,683.7 L392.3,682.9 L393.2,681.8 L394.2,680.4 L395.1,678.8 L396.0,676.9 L397.0,674.6 L397.9,672.0    L398.8,669.1 L399.8,665.8 L400.7,662.2 L401.7,658.1 L402.6,653.7 L403.5,648.8 L404.5,643.5 L405.4,637.7    L406.3,631.5 L407.3,624.7 L408.2,617.5 L409.2,609.8 L410.1,601.5 L411.0,592.7 L412.0,583.3 L412.9,573.3    L413.9,562.8 L414.8,551.6 L415.7,539.8 L416.7,527.4 L417.6,514.3 L418.5,500.6 L419.5,486.1 L420.4,471.0    L421.4,455.1 L422.3,438.5 L423.2,421.1 L424.2,403.0 L425.1,384.1 L426.0,364.4 L427.0,343.9 L427.9,322.5    L428.9,300.3 L429.8,277.3 L430.7,253.4 L431.7,228.5 L432.6,202.8 L433.5,176.2 L434.5,148.6 L435.4,120.0    L436.4,90.5 L437.3,60.0 L438.2,28.5 L438.6,16.7  h0.01"
+           id="path22475" />
+      </g>
+    </g>
+    <g
+       id="gnuplot_plot_2">
+      <title
+         id="title22478">gnuplot_plot_2</title>
+      <g
+         style="fill:none; color:green; stroke:currentColor; stroke-width:2.00; stroke-linecap:butt; stroke-linejoin:miter"
+         id="g22480">
+        <path
+           stroke="blue"
+           stroke-dasharray=" 5,8"
+           d="M413.6,16.7 L413.9,20.9 L414.8,34.5 L415.7,47.9 L416.7,61.1 L417.6,74.1 L418.5,86.9 L419.5,99.6    L420.4,112.0 L421.4,124.3 L422.3,136.3 L423.2,148.2 L424.2,159.9 L425.1,171.4 L426.0,182.8 L427.0,193.9    L427.9,204.9 L428.9,215.7 L429.8,226.4 L430.7,236.8 L431.7,247.1 L432.6,257.3 L433.5,267.2 L434.5,277.0    L435.4,286.6 L436.4,296.1 L437.3,305.4 L438.2,314.5 L439.2,323.5 L440.1,332.4 L441.0,341.0 L442.0,349.5    L442.9,357.9 L443.9,366.1 L444.8,374.2 L445.7,382.1 L446.7,389.8 L447.6,397.5 L448.5,404.9 L449.5,412.3    L450.4,419.5 L451.4,426.5 L452.3,433.4 L453.2,440.2 L454.2,446.8 L455.1,453.3 L456.0,459.7 L457.0,465.9    L457.9,472.0 L458.9,478.0 L459.8,483.9 L460.7,489.6 L461.7,495.2 L462.6,500.7 L463.6,506.0 L464.5,511.2    L465.4,516.4 L466.4,521.4 L467.3,526.2 L468.2,531.0 L469.2,535.7 L470.1,540.2 L471.1,544.6 L472.0,549.0    L472.9,553.2 L473.9,557.3 L474.8,561.3 L475.7,565.2 L476.7,569.0 L477.6,572.7 L478.6,576.3 L479.5,579.9    L480.4,583.3 L481.4,586.6 L482.3,589.8 L483.2,593.0 L484.2,596.0 L485.1,599.0 L486.1,601.8 L487.0,604.6    L487.9,607.3 L488.9,609.9 L489.8,612.5 L490.7,614.9 L491.7,617.3 L492.6,619.6 L493.6,621.8 L494.5,624.0    L495.4,626.1 L496.4,628.1 L497.3,630.0 L498.2,631.9 L499.2,633.7 L500.1,635.4 L501.1,637.1 L502.0,638.7    L502.9,640.3 L503.9,641.8 L504.8,643.2 L505.7,644.6 L506.7,645.9 L507.6,647.2 L508.6,648.4 L509.5,649.6    L510.4,650.7 L511.4,651.8 L512.3,652.8 L513.3,653.8 L514.2,654.7 L515.1,655.6 L516.1,656.4 L517.0,657.2    L517.9,658.0 L518.9,658.8 L519.8,659.5 L520.8,660.1 L521.7,660.8 L522.6,661.4 L523.6,661.9 L524.5,662.5    L525.4,663.0 L526.4,663.5 L527.3,664.0 L528.3,664.4 L529.2,664.9 L530.1,665.3 L531.1,665.7 L532.0,666.1    L532.9,666.4 L533.9,666.8 L534.8,667.1 L535.8,667.4 L536.7,667.7 L537.6,668.1 L538.6,668.4 L539.5,668.7    L540.4,669.0 L541.4,669.3 L542.3,669.5 L543.3,669.8 L544.2,670.1 L545.1,670.4 L546.1,670.7 L547.0,671.1    L547.9,671.4 L548.9,671.7 L549.8,672.1 L550.8,672.4 L551.7,672.8 L552.6,673.2 L553.6,673.6 L554.5,674.0    L555.5,674.4 L556.4,674.9 L557.3,675.4 L558.3,675.9 L559.2,676.4 L560.1,677.0 L561.1,677.6 L562.0,678.2    L563.0,678.8 L563.9,679.5 L564.8,680.2 L565.8,681.0 L566.7,681.8 L567.6,682.6 L568.6,683.5 L569.5,684.4    L570.5,685.3 L571.4,686.3 L572.3,687.3 L573.3,688.4 L574.2,689.6 L575.1,690.8 L576.1,692.0 L577.0,693.3    L578.0,694.6 L578.9,696.0 L579.8,697.5 L580.8,699.0 L581.7,700.6 L582.6,702.2 L583.6,703.9 L584.5,705.7    L585.5,707.5 L586.4,709.4 L587.3,711.4 L588.3,713.4 L589.2,715.5 L590.1,717.7 L591.1,720.0 L592.0,722.3    L593.0,724.7 L593.9,727.2 L594.8,729.8 L595.6,732.0  h0.01"
+           id="path22482" />
+      </g>
+    </g>
+    <g
+       id="gnuplot_plot_3">
+      <title
+         id="title22485">gnuplot_plot_3</title>
+      <g
+         style="fill:none; color:white; stroke:blue; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+         id="g22487" />
+      <g
+         style="fill:none; color:#FF9900; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+         id="g22489">
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(62.2,683.9) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22491" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(80.9,683.9) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22493" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(99.7,683.9) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22495" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(118.4,683.9) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22497" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(137.1,683.9) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22499" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(155.9,683.9) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22501" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(174.6,684.0) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22503" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(193.4,683.9) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22505" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(212.1,683.9) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22507" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(230.8,683.8) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22509" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(249.6,683.8) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22511" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(268.3,683.8) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22513" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(287.0,683.8) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22515" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(305.8,683.7) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22517" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(324.5,683.6) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22519" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(343.2,683.3) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22521" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(362.0,683.0) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22523" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(380.7,680.7) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22525" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(399.4,667.0) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22527" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(418.2,505.9) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22529" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(436.9,72.4) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22531" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(455.7,377.0) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22533" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(474.4,561.6) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22535" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(493.1,624.9) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22537" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(511.9,652.3) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22539" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(530.6,665.5) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22541" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(549.3,671.9) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22543" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(568.1,683.0) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22545" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(586.8,694.4) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22547" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(605.5,701.4) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22549" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(624.3,704.5) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22551" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(643.0,705.4) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22553" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(661.8,706.1) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22555" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(680.5,707.3) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22557" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(699.2,708.3) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22559" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(718.0,708.1) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22561" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(736.7,706.9) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22563" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(755.4,706.5) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22565" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(774.2,706.5) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22567" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(792.9,706.4) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22569" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(811.6,705.4) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22571" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(830.4,704.0) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22573" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(849.1,703.0) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22575" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(867.8,704.1) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22577" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(886.6,711.4) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22579" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(905.3,714.9) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22581" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(924.1,714.7) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22583" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(942.8,700.5) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22585" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(961.5,695.4) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22587" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(980.3,694.6) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22589" />
+        <use
+           xlink:href="#gpPt6"
+           transform="translate(999.0,694.0) scale(4.50)"
+           color="rgb(  0,   0,   0)"
+           id="use22591" />
+      </g>
+    </g>
+    <g
+       id="gnuplot_plot_4">
+      <title
+         id="title22594">gnuplot_plot_4</title>
+      <g
+         style="fill:none; color:white; stroke:rgb(  0,   0,   0); stroke-width:2.00; stroke-linecap:butt; stroke-linejoin:miter"
+         id="g22596" />
+      <g
+         style="fill:none; color:red; stroke:currentColor; stroke-width:2.00; stroke-linecap:butt; stroke-linejoin:miter"
+         id="g22598">
+        <path
+           stroke="rgb(  0,   0,   0)"
+           d="M62.2,683.9 L80.9,683.9 L99.7,683.9 L118.4,683.9 L137.1,683.9 L155.9,683.9 L174.6,684.0 L193.4,683.9    L212.1,683.9 L230.8,683.8 L249.6,683.8 L268.3,683.8 L287.0,683.8 L305.8,683.7 L324.5,683.6 L343.2,683.3    L362.0,683.0 L380.7,680.7 L399.4,667.0 L418.2,505.9 L436.9,72.4 L455.7,377.0 L474.4,561.6 L493.1,624.9    L511.9,652.3 L530.6,665.5 L549.3,671.9 L568.1,683.0 L586.8,694.4 L605.5,701.4 L624.3,704.5 L643.0,705.4    L661.8,706.1 L680.5,707.3 L699.2,708.3 L718.0,708.1 L736.7,706.9 L755.4,706.5 L774.2,706.5 L792.9,706.4    L811.6,705.4 L830.4,704.0 L849.1,703.0 L867.8,704.1 L886.6,711.4 L905.3,714.9 L924.1,714.7 L942.8,700.5    L961.5,695.4 L980.3,694.6 L999.0,694.0  h0.01"
+           id="path22600" />
+      </g>
+    </g>
+    <g
+       style="fill:none; color:white; stroke:rgb(  0,   0,   0); stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22602" />
+    <g
+       style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g22604">
+      <path
+         stroke="black"
+         d="M62.2,16.7 L62.2,732.0 L999.0,732.0 L999.0,16.7 L62.2,16.7 Z  h0.01"
+         id="path22606" />
+    </g>
+  </g>
+  <path
+     style="stroke-linejoin:miter;marker-end:url(#Arrow2Send2I);stroke-opacity:1;stroke:#ff0000;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-width:2.5;fill:#ff0000"
+     d="m 381.08421,535.32203 20.81409,0"
+     id="path22692"
+     inkscape:path-effect="#path-effect22694"
+     inkscape:original-d="m 381.08421,535.32203 c 50.44067,0 20.81409,0 20.81409,0"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text23895"
+     y="533.28851"
+     x="300.86795"
+     style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+     xml:space="preserve"><tspan
+       y="533.28851"
+       x="300.86795"
+       id="tspan23897"
+       sodipodi:role="line">25% peak</tspan></text>
+  <path
+     style="fill:#ff0000;stroke:#0000ff;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow2Send2Id)"
+     d="m 579.52633,668.85763 -21.18086,0"
+     id="path22692-8"
+     inkscape:path-effect="#path-effect22694-9"
+     inkscape:original-d="m 579.52633,668.85763 c 50.44066,0 -27.22123,2.01346 -21.18086,0"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text23895-1"
+     y="666.8241"
+     x="580.4505"
+     style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+     xml:space="preserve"><tspan
+       y="666.8241"
+       x="580.4505"
+       sodipodi:role="line"
+       id="tspan24479">5% peak</tspan></text>
+  <path
+     style="fill:#6eff4c;fill-opacity:0.54117647;stroke:none"
+     d=""
+     id="path24449"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#ff5300;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow2Sstartq);marker-end:url(#Arrow2Send2)"
+     d="m 905.39428,688.76785 0,22.283"
+     id="path19125-2"
+     inkscape:path-effect="#path-effect19127-0"
+     inkscape:original-d="m 905.39428,688.76785 c 0,610.16945 0,22.283 0,22.283"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text20013-5"
+     y="680.19531"
+     x="890.88812"
+     style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff5300;fill-opacity:1;stroke:none;font-family:Sans"
+     xml:space="preserve"><tspan
+       y="680.19531"
+       x="890.88812"
+       id="tspan20015-1"
+       sodipodi:role="line">Valley</tspan></text>
+  <path
+     style="stroke-linejoin:miter;marker-end:url(#Arrow2SendHn);stroke-opacity:1;marker-start:none;stroke-dashoffset:0;stroke:#800080;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:8, 4, 2, 4;stroke-width:2;fill:#800080"
+     d="m 414.77206,535.58958 0,194.31272"
+     id="path24545"
+     inkscape:path-effect="#path-effect24547"
+     inkscape:original-d="m 414.77206,535.58958 c 0,196.61381 0,190.2858 0,194.31272"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:#800080;stroke:#800080;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:8, 4, 2, 4;stroke-dashoffset:0;marker-start:none;marker-end:url(#Arrow2SendHn)"
+     d="m 548.32938,638.22876 0,90.72743"
+     id="path24545-3"
+     inkscape:path-effect="#path-effect24547-1"
+     inkscape:original-d="m 548.32938,638.22876 c 0,196.61381 0,86.70051 0,90.72743"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="549.32202"
+     y="745.62714"
+     id="text26518"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan26520"
+       x="549.32202"
+       y="745.62714"
+       style="font-size:16px;fill:#800080">End</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="417.73959"
+     y="727.42242"
+     id="text26518-1"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan26520-2"
+       x="417.73959"
+       y="727.42242"
+       style="font-size:16px;fill:#800080">Begin</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#1d57ff;fill-opacity:1;stroke:none;font-family:Sans"
+     x="497.89832"
+     y="617.08472"
+     id="text6372"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan6374"
+       x="497.89832"
+       y="617.08472"
+       style="font-size:14px;font-weight:bold;fill:#1d57ff;fill-opacity:1;-inkscape-font-specification:Sans Bold">Energy</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#808000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="691.52545"
+     y="676.88135"
+     id="text6439"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan6441"
+       x="691.52545"
+       y="676.88135"
+       style="font-weight:bold;fill:#808000;-inkscape-font-specification:Sans Bold">Area</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0039;fill-opacity:1;stroke:none;font-family:Sans"
+     x="341.28073"
+     y="623.52448"
+     id="text6372-0"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan6374-9"
+       x="341.28073"
+       y="623.52448"
+       style="font-size:14px;font-weight:bold;fill:#ff0039;fill-opacity:1;-inkscape-font-specification:Sans Bold">Charge</tspan></text>
+</svg>

@@ -2,7 +2,7 @@
 %Tommaso Boschi
 
 %preamble
-\documentclass[a4paper, usenatbib, 10pt]{book}
+\documentclass[a4paper, usenatbib, 11pt]{book}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[italian, english]{babel}
@@ -10,7 +10,7 @@
 \usepackage{fancyhdr}
 \usepackage{natbib}
 \usepackage{indentfirst}
-\usepackage{graphicx}
+\usepackage{graphicx, import}
 \usepackage{wrapfig}
 %\usepackage{layaureo}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
@@ -33,16 +33,18 @@
 \usepackage{epstopdf}
 \usepackage[autolanguage, np]{numprint}
 \npfourdigitnosep
-\usetikzlibrary{patterns}
-\usetikzlibrary{plotmarks}
+\usepackage{feynmp-auto}
+%\usepackage{minipage}
+%\usetikzlibrary{patterns}
+%\usetikzlibrary{plotmarks}
 \captionsetup{tableposition=top,figureposition=bottom,font=footnotesize}
 \captionsetup{format=hang,labelfont={sf,bf}}
 %\usepackage[backend=biber]{biblatex}
 
 %\addbibresource{./one.bib}
 
+\newcommand{\inch}{$^{\prime\prime}$}
 
-%\setlength{\headheight}{14pt}
 \begin{document}
 
 %Frontespissio
@@ -66,6 +68,7 @@
 \fancyhf{}
 \fancyhead[LE]{\scshape Phase I of the ANNIE experiment}
 \fancyhead[RO]{\scshape \leftmark}
+%\fancyheadoffset[LE,RO]{14pt}
 \fancyfoot[CE,CO]{\thepage}
 
 \input{cap1}
