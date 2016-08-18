@@ -50,32 +50,36 @@
   \makeatother%
   \begin{picture}(1,0.75)%
 \tiny
-    \put(0,0){\includegraphics[width=\unitlength]{areapoints}}%
-    \put(0.05263672,0.07734375){\makebox(0,0)[rb]{\smash{0}}}%
-    \put(0.05263672,0.17050781){\makebox(0,0)[rb]{\smash{0.02}}}%
-    \put(0.05263672,0.26357422){\makebox(0,0)[rb]{\smash{0.04}}}%
-    \put(0.05263672,0.35673828){\makebox(0,0)[rb]{\smash{0.06}}}%
-    \put(0.05263672,0.44990234){\makebox(0,0)[rb]{\smash{0.08}}}%
-    \put(0.05263672,0.54306641){\makebox(0,0)[rb]{\smash{0.1}}}%
-    \put(0.05263672,0.63613281){\makebox(0,0)[rb]{\smash{0.12}}}%
-    \put(0.05263672,0.72929687){\makebox(0,0)[rb]{\smash{0.14}}}%
-    \put(0.06074219,0.01318359){\makebox(0,0)[b]{\smash{0}}}%
-    \put(0.17509766,0.01318359){\makebox(0,0)[b]{\smash{0.05}}}%
-    \put(0.28945312,0.01318359){\makebox(0,0)[b]{\smash{0.1}}}%
-    \put(0.40380859,0.01318359){\makebox(0,0)[b]{\smash{0.15}}}%
-    \put(0.51816406,0.01318359){\makebox(0,0)[b]{\smash{0.2}}}%
-    \put(0.63251953,0.01318359){\makebox(0,0)[b]{\smash{0.25}}}%
-    \put(0.746875,0.01318359){\makebox(0,0)[b]{\smash{0.3}}}%
-    \put(0.86123047,0.01318359){\makebox(0,0)[b]{\smash{0.35}}}%
-    \put(0.97558594,0.01318359){\makebox(0,0)[b]{\smash{0.4}}}%
+    \put(0,0.05){\includegraphics[width=\unitlength]{areapoints}}%
+    \put(0.05263672,0.12734375){\makebox(0,0)[rb]{\smash{0}}}%
+    \put(0.05263672,0.22050781){\makebox(0,0)[rb]{\smash{0.02}}}%
+    \put(0.05263672,0.31357422){\makebox(0,0)[rb]{\smash{0.04}}}%
+    \put(0.05263672,0.40673828){\makebox(0,0)[rb]{\smash{0.06}}}%
+    \put(0.05263672,0.49990234){\makebox(0,0)[rb]{\smash{0.08}}}%
+    \put(0.05263672,0.59306641){\makebox(0,0)[rb]{\smash{0.1}}}%
+    \put(0.05263672,0.68613281){\makebox(0,0)[rb]{\smash{0.12}}}%
+    \put(0.05263672,0.77929687){\makebox(0,0)[rb]{\smash{0.14}}}%
+    \put(0.06074219,0.06318359){\makebox(0,0)[b]{\smash{0}}}%
+    \put(0.17509766,0.06318359){\makebox(0,0)[b]{\smash{0.05}}}%
+    \put(0.28945312,0.06318359){\makebox(0,0)[b]{\smash{0.1}}}%
+    \put(0.40380859,0.06318359){\makebox(0,0)[b]{\smash{0.15}}}%
+    \put(0.51816406,0.06318359){\makebox(0,0)[b]{\smash{0.2}}}%
+    \put(0.63251953,0.06318359){\makebox(0,0)[b]{\smash{0.25}}}%
+    \put(0.746875,0.06318359){\makebox(0,0)[b]{\smash{0.3}}}%
+    \put(0.86123047,0.06318359){\makebox(0,0)[b]{\smash{0.35}}}%
+    \put(0.97558594,0.06318359){\makebox(0,0)[b]{\smash{0.4}}}%
+\tiny
+    \put(0.20381636,0.26921044){\color[rgb]{1,0,0}\makebox(0,0)[lb]{\smash{25\% peak}}}%
+    \put(0.56684619,0.13880459){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{5\% peak}}}%
+    \put(0.87000793,0.13574677){\color[rgb]{1,0.3254902,0}\makebox(0,0)[lb]{\smash{Valley}}}%
+    \put(0.53644729,0.08962654){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{End}}}%
+    \put(0.40794882,0.08962654){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Start}}}%
 \scriptsize
-    \put(0.29381636,0.22921044){\color[rgb]{1,0,0}\makebox(0,0)[lb]{\smash{25\% peak}}}%
-    \put(0.56684619,0.09880459){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{5\% peak}}}%
-    \put(0.87000793,0.08574677){\color[rgb]{1,0.3254902,0}\makebox(0,0)[lb]{\smash{Valley}}}%
-    \put(0.53644729,0.0218485){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{End}}}%
-    \put(0.40794882,0.03962654){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Begin}}}%
-    \put(0.48622882,0.14737821){\color[rgb]{0.11372549,0.34117647,1}\makebox(0,0)[lb]{\bfseries \smash{Energy}}}%
-    \put(0.67531782,0.08898306){\color[rgb]{0.3137,0.3137,0}\makebox(0,0)[lb]{\bfseries \smash{Area}}}%
-    \put(0.33328196,0.14108938){\color[rgb]{1,0,0.22352941}\makebox(0,0)[lb]{\bfseries \smash{Charge}}}%
+    \put(0.48622882,0.19737821){\color[rgb]{0.11372549,0.34117647,1}\makebox(0,0)[lb]{\bfseries \smash{Energy}}}%
+    \put(0.73531782,0.13898306){\color[rgb]{0.3137,0.3137,0}\makebox(0,0)[lb]{\bfseries \smash{Area}}}%
+    \put(0.23328196,0.15108938){\color[rgb]{1,0,0.22352941}\makebox(0,0)[lb]{\bfseries \smash{Charge}}}%
+    \put(0.5,0.01){\makebox(0,0)[b]{\smash{Time ($\mu$s)}}}%
+    \put(-0.05,0.45){\rotatebox{-270}{\makebox(0,0)[b]{\smash{Voltage (V)}}}}%
+
   \end{picture}%
 \endgroup%

@@ -91,12 +91,12 @@ the VME320/2eSST protocol, can double the theoretical bandwidth of VME to 320MB/
 cite[http://www.vita.com/VME320-2eSST-Protocol].
 
 The crates are governed by a VME-based CPU board which runs Internet Rack Monitor software
-This latest version runs on the MVME162-22 cpu board with MC68040 cpu, 4MB dynamic ram, %
-0.5MB static ram, 1MB flash memory, ethernet interface, and support for up to four %
-IndustryPack daughter boards. 
+This latest version runs on the MVME162-22 CPU board with MC68040 CPU, 4MB dynamic ram, %
+0.5MB static ram, 1MB flash memory, Ethernet interface, and support for up to four %
+Industry-Pack daughter boards. 
 The latter allows connection to I/O signals via ribbon cables to digital and %
 analog interface boards mounted inside the IRM chassis. 
-The ethernet interface allows network connection and supports widely-used %
+The Ethernet interface allows network connection and supports widely-used %
 Internet protocols that allow data request and setting access as well as alarm reporting, %
 all based upon the UDP (User Datagram Protocol) transport layer.
 
@@ -135,7 +135,7 @@ and the 26 positive HV PMTs in the MRD.
 at least two layers of the MRD.
 }
 
-For storage limitations, a downsampling to 125~MHz was established.
+For storage limitations, a down-sampling to 125~MHz was established.
 The resolution of 8~ns suffices the needs of the R\&D stage of Phase I.
 An 80~$\mu$s long time window wash chosen, therefore with this resolution, four data sets can be %
 hold in the 40000 samples buffer.
@@ -200,7 +200,7 @@ random plots of data collected.
   \label{fig:anniedaq}
 \end{figure}
 
-On the VME eletronics side, the Chain communicates with the VME CPU retrieving all the informations %
+On the VME electronics side, the Chain communicates with the VME CPU retrieving all the information %
 about the cards and the trigger.
 The \emph{Trigger Sender} tool check the status of the VME controller.
 If the ADC are triggered, a trigger message is sent to the Main Chain.
@@ -209,9 +209,7 @@ are sent to the Main Chain via ZeroMQ messaging over TCP.
 
 The last tool of the Main Chain, \emph{Data recorder}, saves data into the following %
 ROOT tree structure:
-\begin{center}
-\begin{varwidth}{\textwidth}
-\begin{itemize}
+\begin{description}
   \item[\bfseries LastSync :] time of data acquisition;
   \item[\bfseries SequenceID :] incrementale number;
   \item[\bfseries StartTime :] same as lastsync;
@@ -220,27 +218,32 @@ ROOT tree structure:
   \item[\bfseries PMTID :] global identifier of PMT (labelled from 1 to 60);
   \item[\bfseries BufferSize :] size of the buffer per channel;
   \item[\bfseries FullBufferSize :] size of the buffer per card;
-  \item[\bfseries Data :] array holding the full buffer.
-\end{itemize}
-\end{varwidth}
-\end{center}
+  \item[\bfseries Data :] an array holding the full buffer of a single card.
+\end{description}
 
-Each entry corresponds to an acquisition of the full buffer from the cards saved in a 40000 long %
-float array, i.e. the digitised time profile of four consecutive 80~$\mu$s data set.
-The ROOT files are then post processed: the buffer is split and an entry is created for each %
-beam event and the precise time stamp is reconstructed.
+ Each entry corresponds to an acquisition of the full buffer from the cards saved in a 160000 long %
+ float array, i.e. the digitised time profile of four consecutive 80~$\mu$s data set times the four channels.
+ The ROOT files are then post processed: the buffer is split and an entry is created for each %
+ beam event, or trigger, and the precise time stamp is reconstructed.
+ In Fig.~\ref{fig:timeprofile} the time profile is shown before and after the post-processing.
+ Moreover, each channel is mapped to its equivalent PMT.
+ This stage reduces the file sizes by a nearly a factor of four.
 
-\textcolor{red}{Have to talk about output format too.}
+ Provided that the spill's frequency is $\sim$15~Hz and four spills are acquired, the buffer %
+ takes around a quarter of a second to fill.
+ The longest portion of the chain to execute is the disk saving and it is meant to be done %
+ between pulse trains, so as to minimise the number of spills lost.
+ A whole execution of the chain lasts nearly a second, slightly less than the pulse train frequency.
 
-Provided that the spill's frequency is $\sim$15~Hz and four spills are acquired, the buffer %
-takes around a quarter of a second to fill.
-The longest portion of the chain to execute is the disk saving and it is meant to be done %
-between pulse trains, so as to minimse the number of spill lost.
-A whole execution of the chain lasts nearly a second, slightly less than the pulse train frequency.
-
-\textcolor{red}{Talk about speed of software.}
-
-
+\begin{figure}
+  \centering
+  \subfloat[Before post-processing, arrays include the full buffer from each card.]%
+  {\includegraphics[scale=0.35]{pics/fullbuffer.pdf}}\,
+  \subfloat[After post-processing, arrays are split per trigger and hold 80~$\mu$s worth of data.]%
+  {\includegraphics[scale=0.35]{pics/onetrigger.pdf}}
+  \caption{Time profile before and after the post-processing.}
+  \label{fig:timeprofile}
+\end{figure}
 
 \section{MRD Chain}
 \label{sec:3.2}
@@ -307,7 +310,7 @@ the sub\textbf{A}ddress, and the \textbf{F}unction code.}.
 
 The MRD's ToolChain employs the CAMAC classes to interface with the controller and the cards.
 As illustrated in Fig.~\ref{fig:anniedaq}, the Tools contained in the Chain are:
-\textcolor{red}{picure of mrd chain alone.}
+\textcolor{red}{picture of MRD chain alone.}
 
 \begin{center}
   \small
@@ -338,9 +341,7 @@ Nevertheless the charge converters have been tested, as well.
 
 The last tool fills a ROOT tree and save it to file.
 The tree has the following branches:
-\begin{center}
-\begin{varwidth}{\textwidth}
-\begin{itemize}
+\begin{description}
   \item[\bfseries Trigger :] incremental number of the trigger;
   \item[\bfseries OutNumber :] number of channels read;
   \item[\bfseries Type :] string telling whether the data refer to TDC or to ADC;
@@ -348,9 +349,7 @@ The tree has the following branches:
   \item[\bfseries Slot :] slot number of the card;
   \item[\bfseries Channel :] channel of the card from which the value was retrieved;
   \item[\bfseries TimeStamp :] UNIX time stamp of the entry, since epoch, in ms.
-\end{itemize}
-\end{varwidth}
-\end{center}
+\end{description}
 
 The MRD Chain runs in a different PC than the Main DAQ and the ToolChain %
 is executed at a different speed, for it is a standalone process.
@@ -360,23 +359,23 @@ the clocks are synchronised to the same NTP server, which uses GPS time sources.
 With the help of the Fermilab spill database [ref here], the events from the two DAQs can be related %
 to each other.
 
-This method is effective as long as the frequency of the chain exection is greater than the %
-spill freqeuncy.
+This method is effective as long as the frequency of the chain execution is greater than the %
+spill frequency.
 The frequency should be above the 15~Hz spill frequency in order not to miss any beam event.
 However the CAMAC event rate has been found to be quite low in this %
 early stage, around \np{0.20}~Hz\footnote{The rate is measured from output ROOT file, dividing %
-  the number of entries, i.e. events, by the time passed between the first and the last timestamp.}, %
+  the number of entries, i.e. events, by the time passed between the first and the last TimeStamp.}, %
 since only two layers of the MRD are used, in addition to the Veto.
 This suggest that the modules present data only the $\sim$\np{1.3}\% of the time.
 
-Concerning the MRD DAQ, the longest portion of the chain is the CAMAC addressing and data colleting.
+Concerning the MRD DAQ, the longest portion of the chain is the CAMAC addressing and data collecting.
 The software has been tested using software triggering, employing the test functions of the modules, %
 and counting the time required for \np{100000} repeated cycles with \np{1.3}\% firing probability; %
-the frequency was afterward estimated.
+the frequency was afterwards estimated.
 The result is shown in Fig.~\ref{fig:tdcfreq}, where frequency vs number of channel is %
 plotted for TDC modules.
 It's clear that the frequency is well above the lower theoretical limit of 15~Hz.
-Rescaling the freqency to full time firing, i.e. the number of channel to be read is maximum %
+Rescaling the frequency to full time firing, i.e. the number of channel to be read is maximum %
 for every DAQ cycle, the limit is easily reached with just ten modules, corresponding %
 to five layers of MRD, Veto excluded.
 
@@ -393,18 +392,18 @@ because the USB connection can provide fast enough communication to address all 
 Concerning the TimeStamp, a time variable drift in the MRD TimeStamps has been found, %
 likely due to imprecise synchronisation with the NTP server %
 (accuracy given to be less than 30~ms) which occurs every 1024~ms. 
-A post-processor has been written to fix the TimeStamps, identifing time patterns in the %
+A post-processor has been written to fix the TimeStamps, identifying time patterns in the %
 spill spectrum and comparing them to the database information.
 In Fig.~\ref{fig:tdcpost} a detail of the result of the synchronisation is plotted.
 The blue lines are given by the database, used as a reference.
-The timestamps before and after the post-processing are printed respectively in red and green.
+The TimeStamps before and after the post-processing are printed respectively in red and green.
 
 The post-processor also handles other aspects of the raw data, like converting the module's values %
 into physical quantities and mapping each channel to its PMT.
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.7]{textime.pdf}
+  \includegraphics[scale=0.7]{pics/textime.pdf}
   \caption{Detail of the time stamp alignment with the database data.}
   \label{fig:tdcpost}
 \end{figure}
@@ -413,10 +412,10 @@ into physical quantities and mapping each channel to its PMT.
 \label{sec:3.3}
 {
 \color{red}
-Downsampling -> was it worth it?
+Down-sampling -> was it worth it?
 Zero suppression is cooler for memory issues, takes a lot of memory.
 
-Integration between Chains, using timestamps now and database.
+Integration between Chains, using TimeStamps now and database.
 This technique is ok, but the chains must be implement end better each other.
 
 One solution could be to create a tool to govern the MRD chain, as in Fig.~\ref{fig:daqcomplete}
@@ -425,7 +424,7 @@ One solution could be to create a tool to govern the MRD chain, as in Fig.~\ref{
 The final version of the DAQ system needs a full integration of the Main Chain with the %
 CAMAC one.
 A possible solution is depicted in Fig.~\ref{fig:daqcomplete}.
-A new tool could be employed to embody a simplified verion of the MRD ToolChain, rather than %
+A new tool could be employed to embody a simplified version of the MRD ToolChain, rather than %
 run it in a parallel process.
 The MRD Chain, as proved in previous sections, is fast in execution, so it should not %
 significantly slow down the Main DAQ.
@@ -449,5 +448,5 @@ As a matter of fact, noise is mostly shown in the 80~$\mu$s time window and %
 the meaningful signal is limited short, compared to the time window.
 Considering that an high time resolution is pointless in the R\&D stage of the experiment, the %
 downgrade was established.
-Soon, zero suppression method would be employed, which will definitely overcome storage needs.
+Soon, \emph{zero-suppression} method would be employed, which will definitely overcome storage needs.
 The preliminary data analysis undertaken can back this decision up, as explained in section~[ref].

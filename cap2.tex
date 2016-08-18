@@ -47,20 +47,20 @@
  Accurate determination of neutron tagging efficiencies will require a 
  detailed understanding of the number of neutrons produced by neutrino interactions 
  in water as a function of momentum transferred.
- This accuracy can be achieved by using precision timing, thank to the LAPPDs, to localize %
+ This accuracy can be achieved by using precision timing, thank to the LAPPDs, to localise %
  interaction vertices in the small fiducial volume of the detector.
  The ANNIE experiment will be an innovative application of these devices demonstrating %
  their feasibility for Water Cherenkov neutrino detectors.
  
  The experiment is planned to proceed in two stages, spread over five years:
- \begin{itemize}
+ \begin{description}
    \item[\bfseries Phase I] a partially-instrumented test-beam run using only Photomultipliers %
      (PMTs) for the purpose of measuring critical neutron backgrounds to the experiment;
    \item[\bfseries Phase II] a longer run with a more fully-instrumented detector %
      where incremental research and development for the LAPPDs and %
      accompanying fast electronics will be fulfilled, as long as the expansion of the %
      photodetector coverage (both LAPPDs and PMTs) required.
- \end{itemize}
+ \end{description}
 
  \emph{Year 1} will focus on the R\&D, particularly on the development of the Data Acquisition %
  system, along with the testing in water of the first model of LAPPD. 
@@ -78,7 +78,7 @@
  As established previously, detection of final state neutrons from nuclear interactions %
  would have a transformative impact on a wide variety of neutrino physics measurements.
  Nevertheless there are major limitations on the effective execution of neutron tagging %
- techinques, for both sides of Physics:
+ techniques, for both sides of Physics:
  \begin{itemize}
    \item theoretically, large theoretical uncertainties on the nuclear mechanisms that %
      produce neutrons in GeV-scale neutrino interactions are not still clear;
@@ -123,9 +123,9 @@ This interaction is called Quasi Elastic.}
  the neutrino interacts with a correlated pair of nucleons, all modify these expectations.
  The theory describing these interactions is under development and is often weakly constrained %
  by the available data. 
- One of the main result publiched by the MiniBooNE collaboration~ref, concerns the Charged Current %
+ One of the main result published by the MiniBooNE collaboration~ref, concerns the Charged Current %
  Quasi-Elastic interactions.
- The first double differential cross section for CCQE interatctions are better described by models %
+ The first double differential cross section for CCQE interactions are better described by models %
  including two-body currents, where low-energy neutrinos scatter off correlated pairs of %
  nucleons.
  A relevant predicted consequence of two-body currents is higher multiplicity of final-state %
@@ -136,12 +136,12 @@ This interaction is called Quasi Elastic.}
  The search for a delayed signal from neutron capture on Gadolinium (Gd) salts dissolved in water %
  is a promising technique for detecting final state neutrons.
 
- It is therefore critical that we experimentally characterize the probability of producing zero %
+ It is therefore critical that we experimentally characterise the probability of producing zero %
  (P(N=0)), one (P(N=1)), or multiple (P(N>1)) neutrons from a neutrino interaction, as a function %
  of both interaction type and momentum transfer.
  Even moderately energetic neutrons ranging from tens to hundreds of MeV will quickly lose energy %
  by collisions with free protons and oxygen nuclei in water. 
- Once thermalized, the neutrons undergo radiative capture, combining with a nearby nucleus to %
+ Once thermalised, the neutrons undergo radiative capture, combining with a nearby nucleus to %
  produce a more tightly bound final state, with excess energy released in a gamma-ray ( ) cascade. 
  Gd-doped water enhances the capture cross-section compared to pure water %
  (49,000 barns compared with 0.3 barns on a free proton) and, since the cascade happens %
@@ -159,6 +159,9 @@ This interaction is called Quasi Elastic.}
  With additional statistics (additional 2 years of data) and improved detector performance, %
  the more demanding goal of studying neutron yields for specific event classes can be met.
 
+ \textcolor{red}{What can happen inside the tank? Cosmic, beam and stuff, what they triggers, %
+   how they can be seen, how the detectors react.}
+
  \section{Neutrino beam}
 
  ANNIE is run on axis from the \emph{Booster Neutrino Beam} (BNB), which deploys %
@@ -166,14 +169,17 @@ This interaction is called Quasi Elastic.}
  The primary beam from the \emph{Linac} uses protons accelerated to 8 GeV kinetic energy %
  by the Fermilab booster. 
  Selected batches containing approximately \np{5e12} protons are extracted %
- and bent toward a beryillium target via dipole magnets.
+ and bent toward a beryllium target via dipole magnets.
  Each spill is composed of 81 bunches of protons, approximately 6~ns wide each %
  and 19~ns apart, for a total spill duration of $\np{1.6}~\mu$s.
+ As far as the detector is concerned, the neutrino beam is seen to arrive with a spill frequency of 15~Hz, %
+ divided in pulse train, around 1~s apart each other.
+
  Beam proton trajectories and positions are monitored on a pulse-by-pulse basis.
  Upstream of the target, the primary proton beam is monitored on a pulse-by-pulse basis %
  using four systems: %
  two toroids measuring its intensity (protons-per-pulse), beam position monitors %
- (BPM) and a multiwire chamber determining the beam width and position, %
+ (BPM) and a multi-wire chamber determining the beam width and position, %
  and a resistive wall monitor (RWM) measuring both the time and intensity of the beam spills.
  A logic signal is also generated by the last device for every intensity peak.
  It is employed to trigger the experiment in correspondence of each spill.
@@ -192,7 +198,7 @@ secondary mesons, mostly pions and kaons.
 A magnetic focusing horn, shown in Fig.~\ref{fig:bnbhorn}, surrounds the beryllium target, %
 bending and sign-selecting the secondary particles emitted along the direction pointing to the hall.
 The focusing is produced by the toroidal magnetic field present in the air volume %
-between the horn’s two coaxial conductors made of aluminum alloy. 
+between the horn’s two coaxial conductors made of aluminium alloy. 
 The beam of focused, secondary mesons emerging from the target/horn region is further collimated, %
 via passive shielding, and allowed to decay into neutrinos in a cylindrical decay %
 region filled with air at atmospheric pressure, 50~m long and 90~cm in radius. 
@@ -332,15 +338,15 @@ to state-of-the-art hadron interaction data.
 Of particular importance for this analysis is a $\pi^+$ production in proton-beryllium interactions, %
 which uses experimental input from the HARP [25] and BNL E910 [26] experiments. 
 Production of secondary protons, neutrons, charged pions, and charged and neutral %
-kaons is taken into account, and elastic and quasielastic scattering of protons in the target %
+kaons is taken into account, and elastic and quasi-elastic scattering of protons in the target %
 are also simulated.
 Particles emanating from the primary proton-beryllium interaction in the target are %
 then propagated within the \textsc{geant4} framework, which accounts for all relevant %
 physics processes. 
-Given the importance of the target (beryillium and alluminum) hadronic reactions, these are %
+Given the importance of the target (beryllium and aluminium) hadronic reactions, these are %
 described by custom models, while other hadronic processes %
 and all electromagnetic processes (energy loss, multiple scattering, %
-effect of horn magnetic field, etc.) are described according to default \textsc{geatn4} physics lists.
+effect of horn magnetic field, etc.) are described according to default \textsc{geant4} physics lists.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
   \centering
@@ -355,9 +361,9 @@ fluxes extrapolated to the detector hall with negligible beam Monte Carlo statis
 Once produced by the simulation, neutrinos are extrapolated along straight lines %
 toward the detector and all neutrinos whose traces cross any part of the active volume are %
 considered for the flux predictions.
-Based on accurate survey data, the distance between the center of the beryllium %
-target and the center of the SciBar detector is taken to be \np{99.9}~m, %
-with the detector located on beam axis within a tolerance of a few centimeters. 
+Based on accurate survey data, the distance between the centre of the beryllium %
+target and the centre of the SciBar detector is taken to be \np{99.9}~m, %
+with the detector located on beam axis within a tolerance of a few centimetres. 
 
 The neutrino flux prediction at the detector location and as a function %
 of neutrino energy is shown in Fig.~\ref{fig:fluxp}.
@@ -388,8 +394,8 @@ These rates are ideal as they ensure single neutrino interactions in the detecto
 \section{The Hall}
 
 The experiment is set up in the former site of the SciBooNE experiment~refagain?, %
-located 8~m below the surface and the 100~m from the BNBtarget.
-Already exisiting instrumentation in the hall is borrowed by the ANNIE experiment.
+located 8~m below the surface and the 100~m from the BNB target.
+Already existing instrumentation in the hall is borrowed by the ANNIE experiment.
 
 \subsection{Water tank}
 
@@ -401,23 +407,26 @@ Already exisiting instrumentation in the hall is borrowed by the ANNIE experimen
 \end{wrapfigure}
 
  The main component of the experiment is the water tank, built and installed in the hall.
- It consists of a welded steel water tank, which dimensions are 10~ft (slightly more than 3~m) %
- of diameter per 13~ft (nearly 4~m) of height, enclosing roughly 23 tonnes of water.
+ It consists of a welded steel water tank, which dimensions are 10~ft (slightly more than three metres) %
+ of diameter per 13~ft (nearly four metres) of height, enclosing roughly 23 tonnes of water.
+ The characteristic dimension of the tank can be compared to the diagonal of the cylinder, %
+ which is about five meters.
+ It corresponds to circa seventeen light-nanoseconds.
  The inner volume is lined with a black, water tight plastic bag and outfitted with %
  a PVC inner support structure mounted with 60 PMTs, and capable of ultimately housing several %
- hundred photosensors. 
+ hundred photo-sensors. 
  The tank is filled with pure water and used in conjunction with a smaller %
  acrylic vessel containing Gd-loaded scintillator to measure neutron backgrounds, called %
  Neutron Volume Capture (NCV).
  Due to its two orders of magnitude smaller volume compared to Super-Kamiokande, %
  ANNIE’s water transparency requirements are less stringent: %
- ANNIE needn only to keep a transparency about 25 meters to lose less than 10\,\% of the light, %
+ ANNIE needs only to keep a transparency about 25 meters to lose less than 10\,\% of the light, %
  as opposed to SK’s effective water attenuation length of 90 meters.
  The ANNIE water volume requires a source of dry nitrogen in order to suppress the growth of %
  biologics in the water.
  This nitrogen is bubbled through the water during fill and afterwards a blanket of nitrogen %
  will be maintained above the surface of the water. 
- The recirculation is kept as low as necessary to maintain a pure N$_2$ environment.
+ The re-circulation is kept as low as necessary to maintain a pure N$_2$ environment.
  ANNIE also relies on the plastic liner to prevent ions, that might compromise transparency, %
  from leaching into the water from the tank walls.
  Water quality is supposed to be monitored using the detected light intensity from cosmic ray muons.
@@ -430,16 +439,16 @@ Already exisiting instrumentation in the hall is borrowed by the ANNIE experimen
  \end{wrapfigure}
 
  A concentrated solution of high-quality (99.99\% TREO\footnote{TREO expresses the %
-   Total Rare Earth Oxide percentage in the element.}) gadolinium sulfate %
+   Total Rare Earth Oxide percentage in the element.}) gadolinium sulphate %
  $\mathrm{Gd}_2(\mathrm{SO}_4)_3$ will be mixed in a portable polypropylene barrel with pure water.
  The available 50 kg of Gd are enough for one test loading (4~kg) and %
  one full loading (40~kg), with 6~kg left over for various other studies and tests.
- Thanks to the complex of water recirculation system, the Gd-loaded water can be removed %
- and stored in a secondary tank, then returned and repurified with minimal loss of Gd, %
+ Thanks to the complex of water re-circulation system, the Gd-loaded water can be removed %
+ and stored in a secondary tank, then returned and re-purified with minimal loss of Gd, %
  between ANNIE's runs.
  Upon completion of the experiment the gadolinium can be easily recovered using a %
- portable demineralizer.
- Measurment of neutron background will be possible thanks to the NCV.
+ portable demineraliser.
+ Measurement of neutron background will be possible thanks to the NCV.
  It consist of a moveable \np{2.5}~cm thick, 50~cm$\times$50~cm transparent acrylic vessel, %
  which holds 100~L of Gd-doped \textsc{ej-335} liquid scintillator, %
  specialised for neutron detection.
@@ -456,8 +465,8 @@ Already exisiting instrumentation in the hall is borrowed by the ANNIE experimen
  \end{figure}
 
  The vessel is weighted so as to have a negative buoyancy.
- Position dependence of the neutron rates from different overburdents of water can be %
- studied by raising and lowering the NCV and traslating it along the beam axis.
+ Position dependence of the neutron rates from different overburdens of water can be %
+ studied by raising and lowering the NCV and translating it along the beam axis.
 
 \subsection{Photodetectors}
 \label{2.2.1}
@@ -465,15 +474,15 @@ Already exisiting instrumentation in the hall is borrowed by the ANNIE experimen
  The coverage provided by 60 8\inch~PMTs borrowed from the WATCHBOY experiment\footnote{The %
    WATCHBOY experiment was designed to measure the rate of radionuclide production in water %
    created by muon spallation. Three primary nuclei of interest, $^{11}$Li, $^8$He, and %
-   $^9$ Li, can produce a high energy beta particle in coindidence with a neutron, thus mimicking %
+   $^9$ Li, can produce a high energy beta particle in coincidence with a neutron, thus mimicking %
    an antineutrino induced inverse beta decay. The experiment was constructed in 2013 at the %
-   Kimbalt on Undergourd Research Facility (KURF) in Virginia, US.} is enough %
+   Kimbalt on Underground Research Facility (KURF) in Virginia, US.} is enough %
    for the Phase I.
  The photomultipliers are mounted in a frame on the bottom of the tank, facing upward.
  The frame is designed to support both the weight of the phototubes in gravity as well as the %
  buoyant forces in water. 
 
- As noted earlier, the necesary photo-coverage to reconstruct events in water %
+ As noted earlier, the necessary photo-coverage to reconstruct events in water %
  will be achieved in ANNIE Phase II by:
  \begin{itemize}
    \item reusing the 8\inch~Hamamatsu PMTs recovered from ANNIE Phase I.
@@ -513,13 +522,13 @@ Already exisiting instrumentation in the hall is borrowed by the ANNIE experimen
  The most promising technology, selected for ANNIE, is the Large Area Picosecond Photodetector %
  (LAPPD), a microchannel plate (MCP) based photomultiplier.
  It can achieve single photoelectron time resolutions less than 100~ps and spatial imaging %
- capabilities to within a single centimeter.
+ capabilities to within a single centimetre.
  This provides a much crisper detection of the Cherenkov ring edge and greatly improves the %
  ability to distinguish between closely separate rings.
  On the other hand, conventional PMTs have time resolution of the order of the nanosecond and act %
  as a single pixel, despite the large active area.
  The combination of LAPPDs and PMTs allows the detector to work as a tracking detector, %
- with track and vertex reconstruction approaching size scales of just a few centimeters.
+ with track and vertex reconstruction approaching size scales of just a few centimetres.
  It also favours the reconstruction of events very close to the wall of the detector, %
  thanks to the small thickness of the LAPPDs (less than \np{1.5}~cm).
  The fiducial volume is thus maximised.
@@ -532,7 +541,7 @@ Already exisiting instrumentation in the hall is borrowed by the ANNIE experimen
  The difference in transit time between two photons arriving at the same photosensor from two %
  different forward-pointing tracks is just a few nanoseconds. 
  This is illustrated in Fig 6. 
- For one LAPPD at the center of overlapping Cherenkov rings, the time separation between photons %
+ For one LAPPD at the centre of overlapping Cherenkov rings, the time separation between photons %
  from a muon and a pion is less than a nanosecond. 
  Time resolutions of 100 and 300 picoseconds are sufficient to resolve that separation. 
  That time separation would be even larger at the photon hits further away from the overlap region. 
@@ -545,7 +554,7 @@ Already exisiting instrumentation in the hall is borrowed by the ANNIE experimen
  Conventional large area PMTs are single anode detectors. 
  Moreover the rise times of PMT pulses are comparable to the time differences between %
  the photons being measured. 
- LAPPDs have a finegrained 30 stripline anode and a single PE response with a rise time %
+ LAPPDs have a fine-grained 30 stripline anode and a single PE response with a rise time %
  of a few hundred picoseconds.
  Large Monte Carlo ensembles show that photon pileup on LAPPDs is low enough that we typically %
  see only one or two hits per channel. 
@@ -569,7 +578,7 @@ Already exisiting instrumentation in the hall is borrowed by the ANNIE experimen
  Each layer employes 13 paddles to detect charged particles produced in the dirt %
  upstream of the hall or muons from the BNB, which hasn't decayed.
  This allows the rejection of events in the tank unrelated to neutrino interactions.
- It employes 2\inch~PMTs to read the signals from the sincitllators.
+ It employes 2\inch~PMTs to read the signals from the scintillator.
 
  \begin{wrapfigure}{L}{0.5\textwidth}
    \centering
