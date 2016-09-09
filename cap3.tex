@@ -1,136 +1,131 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		CHAP 3		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter[Data Acquisition]{Data Acquisition system}
-\label{cha:3}
+ \chapter[Data Acquisition]{Data Acquisition system}
+ \label{cha:daq}
 
-Modern high energy Physics experiment's require automated procedures to collect data from detectors %
-and save them in long term storage for ensuing analysis.
-These routines are gathered in automated system called Data Acquisition system (DAQ), %
-which typically includes three fundamental components:
-\begin{enumerate}
-  \item sensors, to convert physical parameters to electrical signals;
-  \item signal conditioning circuitry, to convert sensor signals into a form that %
-    can be converted to digital values.
-  \item conversion from analog signals to digital values and subsequent storage.
-\end{enumerate}
-The last step is vital in that it allows data manipulation and analysis by a computer.
+ Modern high energy Physics experiments require automated procedures to collect data from detectors %
+ and save them in long term storage for ensuing analysis.
+ These routines are gathered in automated system called Data Acquisition systems (DAQ), %
+ which typically include three fundamental components:
+ \begin{enumerate}
+   \item sensors, to convert physical parameters to electrical signals;
+   \item signal conditioning circuitry, to convert sensor signals into a form that %
+     can be converted to digital values.
+   \item conversion from analog signals to digital values and subsequent storage.
+ \end{enumerate}
+ The last step is vital in that it allows data manipulation and analysis by a computer.
+ 
+ As far as ANNIE is concerned, the first requirement has already been mentioned in section~\ref{sec:tank}: %
+ the experiment has multiple simultaneous data sources, i.e. %
+ the forward Veto, water PMTs and the MRD, as well as a blend of front-end %
+ electronics technologies (VME, CAMAC and custom FADCs) for ADC/TDC and waveform digitisation.
+ Considering this variety of devices, the whole system has also some requirements to achieve:
+ \begin{itemize}
+   \item stability, on long acquisition runs;
+   \item handling over all the aspect of the experiment;
+   \item calibration;
+   \item real time online monitoring;
+   \item direct and remote user control.
+ \end{itemize}
+ 
+ Provided a solid electronic system, these tasks are thoroughly accomplished on the %
+ software's side, since the system is based upon the %
+ \emph{ToolDAQ Framework}\footnote{ToolDAQ %
+   is open source and available on GitHub~[repo].}, developed %
+ by Dr Benjamin Richards~[ref] for the Hyper Kamiokande collaboration (HK).
+ The HK group has used this opportunity to undertake R\&D and testing of %
+ DAQ software and tools for future use in the HK experiment.
+ ANNIE has allowed extensive testing of the flexibility of the software %
+ and all the above features to take place within a single deployment.
+ 
+ ToolDAQ is designed to incorporate the best features of other frameworks along with:
+ \begin{itemize}
+   \item being very easy and fast for developing DAQ implementations in a very %
+     modular way;
+   \item scalable network infrastructure, provided by a service discovery protocol, to allow %
+     its use on large scale experiments.
+ \end{itemize}
+ 
+ \begin{wrapfigure}{R}{0.5\textwidth}
+   \centering
+   \includegraphics[scale=.13]{pics/pag4richardshkcollaboration}
+   \caption{Schematic of a ToolChain.}
+   \label{fig:toolchain}
+ \end{wrapfigure}
+ 
+ The main executable relies on user-defined modular classes, called \emph{Tools}, which 
+ present three chief functions: \emph{Initialise}, \emph{Execute}, and \emph{Finalise}.
+ The Tools can be daisy-chained to a \emph{ToolChain} and then handled sequentially by the process %
+ whenever one of those functions is called.
+ A ToolChain also manages the more complicated aspects of the DAQ system, %
+ like the remote control, the service discovery, and the status of its Tools.
+ Parameters, data and other variables are passed between Tools by an editable shared data class.
+ Each tool is allowed to read, update, and modify it, due to it is owned by the ToolChain.
+ The bare structure is sketched in Fig.~\ref{fig:toolchain}.
+ 
+ In the following sections, the whole DAQ structure is delineated as it currently is.
+ It is composed of three parallel ToolChains: the Main DAQ Chain, the VME Chain, and %
+ the CAMAC/MRD Chain.
+ The latter hasn't been implemented in the Main DAQ system yet, which is composed by the %
+ first two Chains only.
+ At the moment the MRD Chain is employed as a standalone DAQ, working aside to %
+ the Main DAQ, on a different CPU with understandable difficulties.
+ Ways of overcoming this issues and future integration of the two DAQ in the same machine are also discussed.
+ 
+ \section{Main DAQ Chain and VME Chain}
+ \label{sec:main}
+ 
+ \subsection{Hardware}
+ \label{sec:main_h}
+ 
+ The primary readout for ANNIE Phase I is provided by a VME-based system developed for the KOTO %
+ experiment\footnote{The KOTO experiment at J-PARC, Japan, aims at observing the rare kaon decay %
+   $K_L\rightarrow \pi^0 \bar{\nu} \nu$ to search for new physics beyond the standard model that %
+   breaks the CP symmetry. The experiment, with a new beam line and new detector components, is %
+   underway and the first run was performed in May 2013.} %
+ by University of Chicago.
+ The \emph{VMEbus} is a computer architecture, where ``VME'' stands for VERSA Module Eurocard.
+ It is widely used in High Energy Physics due to the fact that it is of public domain and %
+ its data transfer speed is quite fast\footnote{For instance the latest manifestation, %
+ the VME320/2eSST protocol, can double the theoretical bandwidth of VME to 320MB/s.
+ cite[http://www.vita.com/VME320-2eSST-Protocol].}.
+ The crates are governed by a VME-based CPU board, interfaced with an Internet Rack Monitor system (IRM) %
+ of Fermilab.
+ The latter allows network connection and supports widely-used Internet protocols that manage data request %
+ and setting access as well as alarm reporting, all based upon the User Datagram Protocol (UDP) transport layer.
+ 
+ The system consists of two types of VME module:
+ \begin{itemize}
+   \item custom flash analog-to-digital converters (FADC), each with four channels, 500~MHz sampling pipeline, 14~bit %
+     resolution
+   \item Master Trigger (MT) cards which distribute the 125~MHz clock, synchronises the FADC %
+     cards, provides the trigger, and provides a \emph{busy} signal.
+ \end{itemize}
+ 
+ The leading edge of photomultiplier signal is too fast for an 8~ns sampling.
+ To reduce dead time and allow the 500~MHz sampling, the output signals from the detectors %
+ are stored in 8000 samples pipelines inside Field Programmable Gate Arrays (FPGAs) until %
+ a trigger decision is made.
+ The three levels trigger system uses the waveform information with increased %
+ sophistication at each level.
+ Each MT card can address 8 FADC cards, but can be daisy-chained or arrange hierarchically to %
+ address more total cards.
+ Given the 16 FADC cards of the ANNIE readout, 3 MT cards are used: %
+ one Level-0 card distributes the clock between two Level-1 MT cards, each addressing 8 FADCs.
+ For storage limitations, a down-sampling to 125~MHz was established.
+ The resolution of 8~ns suffices the needs of the R\&D stage of Phase I.
+ Given that an 80~$\mu$s long time window is collected, four data sets can be hold in the 40000 samples buffer %
+ with this time resolution.
+ Each set corresponds to a spill from the beam.
 
-As far as ANNIE is concerned, the first requirement has already been discussed in section~ref: %
-the experiment has multiple simultaneous data sources, i.e. %
-the forward Veto, water PMTs and the MRD, as well as a blend of front-end %
-electronics technologies (VME, CAMAC and custom FADCs) for ADC/TDC and waveform digitisation.
-Considering this variety of devices, the whole system has also some requirements to achieve:
-\begin{itemize}
-  \item stability, on long acquisition runs;
-  \item control all the aspect of the experiment;
-  \item calibration; 	%check this
-  \item real time online monitoring;
-  \item direct and remote user control.
-\end{itemize}
+ The system primarily records the traces from the PMTs in the ANNIE water volume.
+ The Muon Range Detector and the Forward Veto nominally rely on the same FADC system, but the signals %
+ from the scintillating paddlesas are combined through an analog OR and sent to a %
+ few spare FADC channels on the KOTO boards. 
 
-Provided a solid electronic system, these tasks are thoroughly accomplished on the %
-software's side, since the system is based upon the %
-\emph{ToolDAQ Framework}\footnote{ToolDAQ %
-  is open source and available on GitHub~[repo].}, developed %
-by Dr Benjamin Richards~[ref] for the Hyper Kamiokande collaboration (HK).
-The HK group has used this opportunity to undertake R\&D and testing of %
-DAQ software and tools for future use in the HK experiment.
-ANNIE experiment has allowed extensive testing of the flexibility of the software %
-and all the above features to take place within a single deployment.
-
-ToolDAQ is designed to incorporate the best features of other frameworks along with:
-\begin{itemize}
-  \item being very easy and fast to develop DAQ implementations in a very %
-    modular way;
-  \item Dynamic Service Discovery and Publishing; %
-  \item scalable network infrastructure (provided by ZeroMQ) to allow its use on large scale experiments.
-\end{itemize}
-
-\begin{wrapfigure}{R}{0.5\textwidth}
-  \centering
-  \includegraphics[scale=.13]{pics/pag4richardshkcollaboration}
-  \caption{Schematic of a ToolChain.}
-  \label{fig:toolchain}
-\end{wrapfigure}
-
-The main executable relies on user-defined modular classes, called \emph{Tools}, which 
-present three chief functions, \emph{Initialise}, \emph{Execute}, and \emph{Finalise}.
-The Tools can be daisy-chained to a \emph{ToolChain} and then handled sequentially by the process %
-whenever one of those functions is called.
-A ToolChain also manages the more complicated aspects of the DAQ system, %
-like the remote control, the service discovery, and the status of the contained Tools.
-Parameters, data and other variables are passed between Tools by an editable shared data class.
-Each tool is allowed to read, update, and modify it, due to it is owned by the ToolChain.
-The bare structure is sketched in Fig.~\ref{fig:toolchain}.
-
-In the following sections, the whole DAQ structure is analysed as it currently is.
-It is composed of three parallel ToolChains: the Main DAQ Chain, the VME Chain, and %
-the CAMAC/MRD Chain.
-The latter hasn't been implemented in the Main DAQ system yet, which is composed by the %
-first two Chains only.
-At the moment the MRD Chain is employed as a standalone DAQ, working in parallel %
-with the Main DAQ, on a different machine with resulting difficulties.
-Future integration of the two DAQ in the same machine are also discussed.
-
-\section{Main DAQ Chain and VME Chain}
-
-%\textcolor{red}{Improve dead time section. VME is known as CAMAC}
-
-\subsection{Hardware}
-
-The primary readout for ANNIE Phase I is provided by a VME-based system developed for the KOTO %
-experiment\footnote{The KOTO experiment at J-PARC, Japan, aims at observing the rare kaon decay %
-  $K_L\rightarrow \pi^0 \bar{\nu} \nu$ to search for new physics beyond the standard model that %
-  breaks the CP symmetry. The experiment, with a new beam line and new detector components, is %
-  underway and the first run was performed in May 2013.} %
-by University of Chicago.
-The \emph{VMEbus} is a computer architecture, where ``VME'' stands for VERSA Module Eurocard.
-It is widely used in High Energy Physics due to the fact that it is of public domain and %
-its data transfer speed is quite fast\footnote{For instance the latest manifestation, %
-the VME320/2eSST protocol, can double the theoretical bandwidth of VME to 320MB/s.
-cite[http://www.vita.com/VME320-2eSST-Protocol].}.
-
-The crates are governed by a VME-based CPU board which runs Internet Rack Monitor software.
-This latest version runs on the MVME162-22 CPU board with MC68040 CPU, 4MB dynamic ram, %
-0.5MB static ram, 1MB flash memory, Ethernet interface, and support for up to four %
-Industry-Pack daughter boards. 
-The latter allows connection to I/O signals via ribbon cables to digital and %
-analog interface boards mounted inside the IRM chassis. 
-The Ethernet interface allows network connection and supports widely-used %
-Internet protocols that allow data request and setting access as well as alarm reporting, %
-all based upon the UDP (User Datagram Protocol) transport layer.
-
-The system consists of two types of VME module:
-\begin{itemize}
-  \item 4-channel 500~MHz sampling pipeline 14 bit custom FADC cards, which primarily record %
-    the traces from the PMTs in the ANNIE water volume.
-  \item Master Trigger (MT) cards which distribute the 125~MHz clock, synchronises the FADC %
-    cards, provides the trigger, and provides a busy signal.
-\end{itemize}
-
-The leading edge of photomultiplier signal is too fast for an 8-ns sampling.
-To avoid dead time and allow the 500~MHz sampling, the output signals from the detectors %
-are stored in 8000 samples pipelines inside Field Programmable Gate Arrays (FPGAs) until %
-a trigger decision is made.
-The three levels trigger system uses the waveform information with increased %
-sophistication at each level.
-Each MT card can address 8 FADC cards, but can be daisy-chained or arrange hierarchically to %
-address more total cards.
-Given the 16 FADC cards of the ANNIE readout, 3 MT cards are used: %
-one Level-0 card distributes the clock between two Level-1 MT cards, each addressing 8 FADCs.
-
-The Muon Range Detector and the Forward Veto nominally rely on the same FADC system as %
-the PMTs in the water volume for the first runs.
-The signals coming from the paddles are combined through an analog OR and sent to a %
-few spare FADC channels on the KOTO boards. 
-
-For storage limitations, a down-sampling to 125~MHz was established.
-The resolution of 8~ns suffices the needs of the R\&D stage of Phase I.
-An 80~$\mu$s long time window is collected, therefore with this resolution, four data sets can be %
-hold in the 40000 samples buffer.
-Each set corresponds to a spill from the beam.
 
 \subsection{Software}
+\label{sec:main_s}
 
 The data from the water PMTs and the logical sum from the Veto and MRD are acquired by the Main DAQ, %
 which hinges upon two strictly complementary ToolChains: the Main Chain and the VME Chain.
@@ -236,10 +231,10 @@ ROOT tree structure:
 \end{figure}
 
 \section{MRD Chain}
-
-\label{sec:3.2}
+\label{sec:mrdchain}
 
 \subsection{Hardware}
+\label{sec:mrdchain_h}
 
  As explained in Sec.~ref, the signal from the FACC %
  and two layers of the MRD are logically summed and read by the VME digitisers.
@@ -279,7 +274,8 @@ ROOT tree structure:
  A XILINX Spartan 3 family FPGA performs all CCUSB logic and functions. 
 
 \subsection{Software}
-%\textcolor{red}{Time of acquisition is 1/x. Underline that.}
+\label{sec:mrdchain_s}
+
  The thesis's work is mainly focused on the development of a dedicated data acquisition system %
  for the CAMAC electronics of the experiment.
  A separate MRD DAQ has been created from scratch within the ToolDAQ Framework in order %
@@ -396,7 +392,7 @@ ROOT tree structure:
 \end{figure}
 
 \section{Future improvement}
-\label{sec:3.3}
+\label{sec:future}
 
  The final version of the DAQ system needs a full integration of the Main Chain with the %
  CAMAC one.

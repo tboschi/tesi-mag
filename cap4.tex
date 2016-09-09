@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		CHAP 4		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Data Analysis procedures}
-\label{cha:4}
+\label{cha:methdod}
 
  Interpreting the electronic signals produced by the detector is a mandatory step for event reconstruction %
  process.
@@ -15,13 +15,14 @@
  framework, valid even for the future phases of the experiment.
 
 \section{Data selection}
+\label{sec:data}
 
  The Main DAQ is programmed to create a new \emph{Run} every time the Chain is stopped and restarted.
  Due to being an R\&D phase, the DAQ has been improved in various occasion during data taking, %
  hence the size and the number of post-processed files, that constitute the \emph{Runs}, are not constant.
  Nevertheless high statistics were achieved most of the time.
  The post-processed ROOT files (see section~ref) from the DAQ are used in the data analysis.
- The buffer retrieved from the VME boards is properly split for each trigger (hardware or software) signal, %
+ The buffer retrieved from the VME boards is properly split for each trigger, either hardware or software, %
  in that each set of data consists of 80~$\mu$s worth of digitised signal.
  A single file holds 383 full buffers and this translates to 1532 triggers, or physically speaking to \np{122.560}~ms.
 
@@ -59,6 +60,7 @@
 \end{table}
 
 \section{Individual pulse analysis}
+\label{sec:pulse}
 %\textcolor{red}{Peak to valley suggests that a reflection occurs. Explain here or next?}
 
  The data analysis software scans all the post-processed time profile which the \emph{Run} consists of, %
@@ -92,51 +94,55 @@
 
  Each pulse is individually analysed and processed by a routine of algorithms.
  As a result, a set of values is gathered from every pulse, in addition to Veto and MRD coincidences.
- These quantities, outlined in Fig.~\ref{fig:pulseana}, are useful for following analysis and they are labelled:
+ These quantities, outlined in Fig.~\ref{fig:pulseana}, are useful for following analysis and they are labelled as:
 
 \begin{description}
-  \item[\bfseries Baseline]: it is the average of first 10 points of the pulse; %
+  \item[\bfseries Baseline:] it is the arithmetic mean of first ten points of the pulse; %
     this value is then subtracted from the whole array.
-  \item[\bfseries Height]: it is the height of the peak (maximum) with respect to the zero.
-  \item[\bfseries Peak to valley]: it is the time distance from the peak to the valley (minimum).
-  \item[\bfseries Start]: it is the position of the 25\% of the rising edge of the pulse, estimated with %
+  \item[\bfseries Peak:] it is the height of the peak (maximum) with respect to the zero.
+  \item[\bfseries Start:] it is the position of the 25\% of the rising edge of the pulse, estimated with %
     precision using cubic interpolation
-  \item[\bfseries Width]: it is the time that spans from Start to the 5\% of the falling edge %
+  \item[\bfseries Previous:] is the time difference between the Start and the Start of the previous pulse, %
+  \item[\bfseries Peak to valley:] it is the time distance from the peak to the valley (minimum).
+  \item[\bfseries Width:] it is the time that spans from Start to the 5\% of the falling edge %
     of the pulse (End), calculated using the same algorithm employed for Time.
-  \item[\bfseries Charge]: it is the sum of the 5 points around peak, weighted with the bin width.
-  \item[\bfseries Energy]: it is the signal integral form the Start to the End.
-  \item[\bfseries Area]: it is the area of the modulus of the pulse.
-  \item[\bfseries Time of flight]: is the time difference between the Start and RWM signal.
-  \item[\bfseries Previous]: is the time difference between the Start and the Start of the previous pulse, %
+  \item[\bfseries Charge:] it is the sum of the 5 points around peak, weighted with the bin width.
+  \item[\bfseries Energy:] it is the integral of the signal form the Start to the End.
+  \item[\bfseries Area:] it is the area of the modulus of the pulse.
+%  \item[\bfseries Time of flight:] is the time difference between the Start and RWM signal.
     if from the same PMT.
 \end{description}
 
 \begin{figure}
   \centering
   \def\svgwidth{0.47\textwidth}
-  \subfloat[From left to right: in green the \emph{BaseLine}, in orange the \emph{Peak Height}, %
+  \subfloat[From left to right: in green the \emph{BaseLine}, in orange the \emph{Peak} height, %
   in purple the \emph{Width}, and in light blue the \emph{Peak to Valley} time distance.]%
-  {\import{pics/}{timepoints.pdf_tex}} \qquad
+  {\import{pics/}{timepoints.tex}} \qquad
   \def\svgwidth{0.47\textwidth}
   \subfloat[From left to right: in pink the \emph{Charge}, in blue the \emph{Energy}, and in gold the \emph{Area}. %
   These three integrals cross over each other in the purple region.]%
-  {\import{pics/}{areapoints.pdf_tex}}
+  {\import{pics/}{areapoints.tex}}
   \caption{Illustration of the pulse analysis values. The \emph{25\,\%} and \emph{5\,\% peak height} marks, %
   which define the \emph{Start} and \emph{End} of the signal, are common to both diagrams. The dashed lines represent %
-  the cubic interpolations.}
+  the cubic interpolations.
+  The shape was realised averaging the collected pulses.}
   \label{fig:pulseana}
 \end{figure}
 
  Being a water Cherenkov detector, the event reconstruction in ANNIE relies on time and energy of the signals %
  and for this fact these two quantities must be measured precisely.
- The time position of the pulses, or \emph{Start}, is thus determined with high precision thanks to data %
+ First of all, each pulse is shifted such that the first ten points of the shape have null mean.
+ Doing so, the \emph{Baseline} are normalised and the peaks of the signals become comparable.
+ The time position of the pulses, or \emph{Start}, is determined with high precision thanks to data %
  interpolation\footnote{The algorithm looks for four points around the threshold (25\,\% for the \emph{Start} %
    or 5\,\% for the \emph{End}), which are used to define a cubic function. Using Newton's method, the correct %
    time position is found.}, within the time resolution of the ADCs.
- In Fig.~a of~\ref{fig:spectrum} the spectrum of the \emph{Starts} of a beam run is plotted: the frequency boost %
+ In Fig.~a of~\ref{fig:spectrum} the spectrum of \emph{Starts} of a beam run is plotted: the frequency boost %
  with respect to the background suggests that the beam occurs ten microseconds after the beginning of the data %
  acquisition.
- The distinctive trait of the neutron capture by gadolinium is a delayed signal, detected 20-30~$\mu$s.
+ The distinctive trait of the neutron capture by gadolinium is a delayed signal, detectable tens of %
+ microseconds after the main interaction.
  Therefore studying the relative time distance between pulses is fundamental, particularly in the ANNIE experiment.
  The \emph{Previous} entry has the potential to accomodate this neccessity and reveal other interesting features.
  For instance, in Fig.~b of~\ref{fig:spectrum} \emph{Start} is plotted against \emph{Previous}.
@@ -148,38 +154,67 @@
    \subfloat[\emph{Start} is plotted against \emph{Previous}; both axes are in $\mu$s.
    The beam pulses are split into two groups: the pulses in the red ellipse are independent of their previous pulse, %
    while a correlation is visible in the set of the blue ellipse.]%
-   {\includegraphics[width=0.47\textwidth]{pics/startvsnext.png}}
+   {\includegraphics[width=0.47\textwidth]{pics/nextvsstart.pdf}}
   \caption{Time distribution of the pulses of a beam run.}
    \label{fig:spectrum}
  \end{figure}
 
- On the other hand, estabilishing the signals' energy is more complicated, since the PMTs have not been calibrated yet.
- However, the photodetectors are set with the same gain, therefore an evaluation of the pulse integral is a good %
- indicator of the total charge deposited on each PMT.
+ Other two interesting and similar quantities are the \emph{Peak to Valley} and the \emph{Width}, whose spectra are %
+ reported in Fig.~\ref{fig:width}.
+ The minima, or valleys, are mainly given by negative peaks, as the one in Fig.~\ref{fig:pulse}, but also visible %
+ in averaged pulses.
+ They could be likely due to signal reflection, caused by an impendance mismatch between signal cables and the ADC %
+ cards: the shape encounters a smaller impedance on the propagation line, hence it is reflected with the same sign;%
+ it is sent back again and inverted when it meets the high impedance of the PMTs.
+ On the whole, the reflection covers the lenght of the line twice.
+ The \emph{Peak to Valley} spectrum suggests that the time delay of the reflection is near $\np{0.2}~\mu$s, therefore %
+ the time needed for a PMT signal to travel to the digitsers is about one hundred of nanoseconds.
+
+ \begin{figure}
+   \centering
+   \subfloat[The distance of the valley with respect to the peak. The mode of the spectrum is at $\np{0.2}~\mu$s.]%
+   {\includegraphics[width=0.50\textwidth]{pics/P2V.pdf}}\,
+   \subfloat[Distribution of \emph{Width} in logarithmic scale. The spectrum presents an edge near two hundred %
+     nanoseconds and then becomes flat.
+     Another edge is visible, close to the peak at sohrter widths.] %
+   {\includegraphics[width=0.47\textwidth]{pics/width.pdf}}
+   \caption{Spectra of \emph{Peak to Valley} and \emph{Width}.
+ In both cases, the plot utterly changes for time intervals larger than two hundred nanoseconds.} 
+   \label{fig:width}
+ \end{figure}
+
+ Estabilishing the energy of each shape is more complicated, because of the multiple reflections and possibilities of %
+ after-pulses.
+ An evaluation of the pulse integral would be a good indicator of the total charge deposited on each PMT.
  Three different methods to estimate the area enclosed in a pulse integral have been implemented.
- The names \emph{Charge}, \emph{Energy}, and \emph{Area} were only chosen in order to distinguish them from each other.
- As suggested from Fig.~\ref{fig:pulse}, there is a partial superimposition of the three: they show indeed %
+ The names \emph{Charge}, \emph{Energy}, and \emph{Area} were chosen in order to distinguish them from each other, %
+ nonetheless they all are approximations of the charge released by an incoming photon.
+ As shown in Fig.~\ref{fig:pulse}, there is a partial superimposition of the three: they show indeed %
  interesting correlation patterns, reported in Fig.~\ref{fig:integral}.
+ The \emph{Energy} was chosen to be employed for following analysis, in order to make the results coherent with %
+ each other.
 
 \begin{figure}
   \centering
   \subfloat[The \emph{Charge} is plotted against the \emph{Energy}]%
-  {\includegraphics[width=0.47\textwidth]{pics/chargevsenergy.png}}\,
+  {\includegraphics[width=0.47\textwidth]{pics/chargevsenergy.pdf}}\,
   \subfloat[The \emph{Area} is plotted against the \emph{Energy}]%
-  {\includegraphics[width=0.47\textwidth]{pics/areavsenergy.png}}\\
+  {\includegraphics[width=0.47\textwidth]{pics/areavsenergy.pdf}}\\
   \subfloat[The \emph{Area} is plotted against the \emph{Charge}]%
-  {\includegraphics[width=0.47\textwidth]{pics/areavscharge.png}}
-  \subfloat[The spectrum of \emph{Width}.]%
-  {\includegraphics[width=0.47\textwidth]{pics/width.pdf}}
+  {\includegraphics[width=0.47\textwidth]{pics/areavscharge.pdf}}
+  \subfloat[The \emph{Peak} is plotted against the \emph{Energy}.]%
+  {\includegraphics[width=0.47\textwidth]{pics/peakvsenergy.pdf}}
   \caption{Correlation plots among the three integral quantities. The red lines isolate areas with different %
-  correlation, likely due to different widths of the pulses.}
+  correlation, likely due to different widths of the pulses.
+  This fact is emphasiased in the right-bottom plot: pulses with the same peak height have different energies, %
+  and vice versa.}
   \label{fig:integral}
 \end{figure}
 
  For every Trigger, the time distribution of the peaks is studied, as well as the time coincidences %
  between the PMTs signals: a time allowance of $\np{0,8}~\mu$s is considered to count of pulses happening %
  simultaneously; this easily translates to the number of PMTs fired at the same time.
- When the latter exceeds a defined threshold, $N_{PMT}$, then an \emph{Event} is appointed and its precise time %
+ When the latter exceeds a defined threshold, $N_{\mathrm{PMT}}$, then an \emph{Event} is appointed and its precise time %
  position is afterwards estimated by a weighted average of the adjacent coincidences.
 % The time tolerancy is high enough to include most of the in a way that all the light from the interaction is counted
  The multiplicity of an Event is a good indicator of the nature of the detected interaction.
@@ -188,8 +223,8 @@
  On the other hand, a muon arisen from the interaction of a beam neutrino with a nucleon would emit gammas %
  along the beam direction: only a portion of the light cone could be captured, hence the PMTs would be partially %
  triggered.
- Even natural radioactivity, from radionuclide in the glass of the phototubes, can be detected, although %
- these events have lower multiplicity and are readily filtered by a proper threshold of $N_{PMT}$.
+ Even natural radioactivity, from radionuclide in the glass of the phototubes for instance, can be detected, although %
+ these events have lower multiplicity and are readily filtered by a proper threshold of $N_{\mathrm{PMT}}$.
  An high-multiplicity event is exemplified in Fig.~\ref{fig:event}.
 
   \begin{figure}
@@ -211,12 +246,16 @@
  reconstruction.
  In order to discriminate the pulses, an arbitrary time interval, whose radius is $\Delta_T$, is defined around %
  the Event time position.
- Every pulse that falls within this window is designated as a \emph{signal}; otherwise it is \emph{noise}.
+ A pulse that falls within this window is designated as \emph{event}, otherwise as \emph{noise}.
+
+ \textcolor{red}{Other orrelation plots.}
 
 \section{Signal and noise discrimination}
+\label{sec:signal}
 
- Discriminating signal from background is a step of utmost importance for data analysis.
- Being a first stage study, the algorithm only relies on $V_T$, $N_{PMT}$, and $\Delta_T$, %
+
+ Discriminating signals from background is a step of utmost importance for data analysis.
+ Being a first stage study, the algorithm only relies on $V_T$, $N_{\mathrm{PMT}}$, and $\Delta_T$, %
  in order to distinguish event pulses from noise ones.
  It is necessary, even for future analysis framework, to determine the best combination of the three parameters.
  To achieve that, these have been varied and the data have been analysed multiple times.
@@ -225,10 +264,10 @@
  neglected.
  The five values employed are all well above the electronic noise, which is of the order of the millivolt.
 
- The ratio between \emph{signals} and \emph{noises} is rather governed by the other two parameters, %
+ The ratio between \emph{events} and \emph{noises} is rather governed by the other two parameters, %
  the number of PMTs fired and the rejection time window.
  Respectively four and five values were picked for these parameters.
- The increase of $N_{PMT}$ restricts the number of \emph{events}, as suggested by Fig.~\ref{fig:npmt} where the %
+ The increase of $N_{\mathrm{PMT}}$ restricts the number of \emph{events}, as suggested by Fig.~\ref{fig:npmt} where the %
  multeplicity of the events is plotted.
  This values is indeed closely related to the number of PMTs hit in an interaction.
  The rise in the frequency, near the end of the x-axis, is likely due to high multeplicity cosmic muon events.
@@ -237,45 +276,193 @@
  developing a correct analysis framework.
  The selected intervals are illustrated in Fig.~b of~\ref{fig:event}.
 
+ \begin{table}
+   \begin{floatrow}
+     \floatbox{table}[0.5\textwidth][\FBheight][t]
+     {\caption{The combination of the employed thresholds.
+      The first one, in bold letters, is common to each subset.}%
+      \label{tab:thr_var}}
+     {\centering
+      \small
+      \begin{tabular}{lccc}
+	    \toprule
+	    \textbf{Label} & $V_T$ & $N_{\mathrm{PMT}}$ & $\Delta_T$ 	\\
+	    		   & (V)   &	       & ($\mu$s)   	\\
+	    \midrule
+	    $\mathbf{C}$& \np{0.02}	& 10	& \np{4.0}  	\\	
+	    \midrule
+	    $V_{00}$	& \np{0.005}	& 10	& \np{4.0}	\\
+	    $V_{01}$	& \np{0.01}	& 10	& \np{4.0}	\\
+	    $V_{05}$	& \np{0.05}	& 10	& \np{4.0}	\\
+	    $V_{10}$	& \np{0.10}	& 10	& \np{4.0}	\\
+	    \midrule
+	    $N_{15}$	& \np{0.02}	& 15	& \np{4.0}	\\
+	    $N_{30}$	& \np{0.02}	& 30	& \np{4.0}	\\
+	    $N_{50}$	& \np{0.02}	& 50	& \np{4.0}	\\
+	    \midrule
+	$\Delta_{50}$	& \np{0.02}	& 10	& \np{5.0}	\\
+	$\Delta_{30}$	& \np{0.02}	& 10	& \np{3.0}	\\
+	$\Delta_{20}$	& \np{0.02}	& 10	& \np{2.0}	\\
+	$\Delta_{10}$	& \np{0.02}	& 10	& \np{1.0}	\\
+	    \bottomrule
+       \end{tabular}}
+
+       \floatbox{figure}[0.5\textwidth][\FBheight][t]
+      {\caption{Frequency of the number of PMTs hit in an event.}%
+      \label{fig:npmt}}
+       {\includegraphics[width=0.5\textwidth]{pics/pmt.pdf}}
+  \end{floatrow}
+ \end{table}
+
+
+ The processed data sets present therefore different number of pulses and different proportion between events %
+ and noises.
+ These quantities are summarised in Tab.~\ref{tab:cosmic}, for the Cosmic run, and in Tab.~\ref{tab:beam}, for the %
+ Beam run.
+ The effects of the different combination of the analysis parameters can be also appreciated by looking at the %
+ average pulse shape.
+ As an example, in Fig.~\ref{fig:avgpulse} the average pulses of both the Cosmic and the Beam run are selected %
+ from for four data sets.
+ The shape of the pulses basically doesn't change, as opposed to the size and the proportion between event and noise, %
+ which are sensitive to the three parameters, $V_T$, $N_{\mathrm{PMT}}$, and $\Delta_T$.
+ The other eight data sets present similar variations as the ones in Fig.~\ref{fig:avgpulse}, but with appropriate %
+ intensity.
+
  \begin{figure}
    \centering
-   \includegraphics[width=0.5\textwidth]{pics/pmt.pdf}
-   \caption{Frequency of the number of PMTs hit in an event.}
-   \label{fig:npmt}
+   \subfloat[$C$]%
+   {\includegraphics[width=0.47\textwidth]{pics/Ccosmicbeam.pdf}}
+   \subfloat[$V_{00}$]%
+   {\includegraphics[width=0.47\textwidth]{pics/T00cosmicbeam.pdf}} \\
+   \subfloat[$N_{50}$]%
+   {\includegraphics[width=0.47\textwidth]{pics/e50cosmicbeam.pdf}}
+   \subfloat[$\Delta_{10}$]%
+   {\includegraphics[width=0.47\textwidth]{pics/S10cosmicbeam.pdf}}
+   \caption{Average pulse for Cosmic and Beam's events and noises from four different data sets: $C$, $V_{00}$, %
+     $N_{50}$, $\Delta_{10}$.
+     The shapes are all similar, even though their size changes.
+     The proportion between peak heights imply that the Beam data are more influenced by the variation of the %
+     parameters.}
+   \label{fig:avgpulse}
  \end{figure}
 
-% \begin{wraptable}{r}{0.5\textwidth}
+
  \begin{table}
-  \caption{The combination of the employed thresholds.
-    The first one, in bold letters, is common to each subset.}
-  \label{tab:thr_var}
+   \caption{Number of pulses in the Cosmic run.
+   The Time column is the percentage of the number of Events times $\np{0.8}~\mu$s with respect to the total time %
+   of the run; %
+   Event is the ratio between event and the total number of pulses; %
+   Evet to Noise Ratio (ENR) is the ratio between Event an Noise number.}
+  \label{tab:cosmic}
   \centering
   \small
-  \begin{tabular}{lccc}
+  \begin{tabular}{lrrrrrr}
     \toprule
-    \textbf{Label}	& $V_T$		& $N_{PMT}$		& $\Delta_T$	\\
-    	&	(V)	 		& 			& ($\mathrm{\mu}$s)			\\
+    \textbf{Label} & Total   & Event       & Noise        & Time \%     & Event \%    & ENR		\\
     \midrule
-    $C$	&	\textbf{\np{0.02}}	& \textbf{10}		& \textbf{\np{4.0}}		\\
-    \midrule
-    $V_{00}$	&	    \np{0.005}		& 10			& \np{4.0}			\\
-    $V_{01}$	&	\np{0.01}		& 10			& \np{4.0}			\\
-    $V_{05}$	&	\np{0.05}		& 10			& \np{4.0}			\\
-    $V_{10}$	&	\np{0.10}		& 10			& \np{4.0}			\\
-    \midrule
-    $N_{15}$	&	\np{0.02}		& 15			& \np{4.0}			\\
-    $N_{30}$	&	\np{0.02}		& 30			& \np{4.0}			\\
-    $N_{50}$	&	\np{0.02}		& 50			& \np{4.0}			\\
-    \midrule
-    $\Delta_{50}$	& \np{0.02}		& 10			& \np{5.0}			\\
-    $\Delta_{30}$	& \np{0.02}		& 10			& \np{3.0}			\\
-    $\Delta_{20}$	& \np{0.02}		& 10			& \np{2.0}			\\
-    $\Delta_{10}$	& \np{0.02}		& 10			& \np{1.0}			\\
+    $C$	      & \np{1869473} & \np{396136} & \np{1473337} & \np{8.593}  & \np{21.190} & \np{0.269}	\\	
+    \midrule                                                                                
+    $V_{00}$  & \np{3991618} & \np{718487} & \np{3273132} & \np{18.349}	& \np{18.000} & \np{0.220}	\\
+    $V_{01}$  & \np{3199707} & \np{564810} & \np{2634897} & \np{14.708}	& \np{17.652} & \np{0.214}	\\
+    $V_{05}$  & \np{546497}  & \np{252326} & \np{294171}  & \np{2.512}	& \np{46.172} & \np{0.858}	\\
+    $V_{10}$  & \np{342258}  & \np{200120} & \np{142138}  & \np{1.573}	& \np{58.471} & \np{1.408}	\\
+    \midrule                                                                                
+    $N_{15}$  & \np{1865579} & \np{361398} & \np{1504181} & \np{8.576}	& \np{19.312} & \np{0.240}	\\
+    $N_{30}$  & \np{1859539} & \np{305447} & \np{1554092} & \np{8.548}	& \np{16.426} & \np{0.197}	\\
+    $N_{50}$  & \np{1850590} & \np{29622}  & \np{1820968} & \np{8.507}	& \np{1.601}  & \np{0.016}	\\
+    \midrule                                                                                
+$\Delta_{50}$ & \np{1869473} & \np{398012} & \np{1471461} & \np{8.593}	& \np{21.290} & \np{0.270}	\\
+$\Delta_{30}$ & \np{1869473} & \np{394194} & \np{1475279} & \np{8.593}	& \np{21.086} & \np{0.267}	\\
+$\Delta_{20}$ & \np{1869473} & \np{389014} & \np{1480459} & \np{8.593}	& \np{20.809} & \np{0.263}	\\
+$\Delta_{10}$ & \np{1869473} & \np{369047} & \np{1500426} & \np{8.593}	& \np{19.741} & \np{0.246}	\\
     \bottomrule
   \end{tabular}
  \end{table}
- %\end{wraptable}
 
- The processed data sets present therefore different number of pulses and different proportion between signals %
- and noises.
- Every collection of processed data is then studied a posteriori and tested with diversified methods. 
+ \begin{table}
+   \caption{Number of pulses in the Beam run.
+   The Time column is the percentage of the number of Events times $\np{0.8}~\mu$s with respect to the total time %
+   of the run; %
+   Event is the ratio between event and the total number of pulses; %
+   Evet to Noise Ratio (ENR) is the ratio between Event an Noise number.}
+   \label{tab:beam}
+  \centering
+  \small
+  \begin{tabular}{lrrrrrr}
+    \toprule
+    \textbf{Label} & Total & Event & Noise & Time \% & Event \% & ENR		\\
+    \midrule
+    $C$	      & \np{5023868}  & \np{2338273} & \np{2685595}  & \np{19.996} & \np{46.543} & \np{0.871}	\\	
+    \midrule                                                       
+    $V_{00}$  & \np{16459218} & \np{4157391} & \np{12301827} & \np{65.510} & \np{25.259} & \np{0.338}	\\
+    $V_{01}$  & \np{12203561} & \np{3579758} & \np{8623803}  & \np{48.572} & \np{29.332} & \np{0.415}	\\
+    $V_{05}$  & \np{2128895}  & \np{1476111} & \np{652784}   & \np{8.473}  & \np{69.337} & \np{2.261}	\\
+    $V_{10}$  & \np{1391752}  & \np{1079800} & \np{311952}   & \np{5.539}  & \np{77.586} & \np{3.461}	\\
+    \midrule                                                       
+    $N_{15}$  & \np{4881223}  & \np{2643880} & \np{2237343}  & \np{19.428} & \np{54.164} & \np{1.182}	\\
+    $N_{30}$  & \np{4743670}  & \np{2026100} & \np{2717570}  & \np{18.880} & \np{41.508} & \np{0.746}	\\
+    $N_{50}$  & \np{4616384}  & \np{1581197} & \np{3035187}  & \np{18.374} & \np{34.252} & \np{0.521}	\\
+    \midrule                                                       
+$\Delta_{50}$ & \np{5023868}  & \np{2470090} & \np{2553778}  & \np{19.996} & \np{49.167} & \np{0.967}	\\
+$\Delta_{30}$ & \np{5023868}  & \np{2197769} & \np{2826099}  & \np{19.996} & \np{43.747} & \np{0.778}	\\
+$\Delta_{20}$ & \np{5023868}  & \np{1820035} & \np{3203833}  & \np{19.996} & \np{36.228} & \np{0.568}	\\
+$\Delta_{10}$ & \np{5023868}  & \np{1459720} & \np{3564148}  & \np{19.996} & \np{29.057} & \np{0.410}	\\
+    \bottomrule
+  \end{tabular}
+ \end{table}
+
+\section{Data size reduction}
+\label{sec:zero}
+
+ A zero-suppression method is planned to be implemented in the data acquisition system for the next stages of ANNIE.
+ As a matter of fact, most of the digitised time window from the VME cards is of no use with respect to the %
+ event reconstruction.
+ This can also be easily understood thanks to the Time column in Tab.~\ref{tab:cosmic} and Tab.~\ref{tab:beam}.
+ Taking advantage of circular memory, this technique basically saves a narrower buffer every time an arbitrary %
+ voltage threshold is reached.
+ Only individual signals are stored, avoiding long-term memory wasting.
+
+ The developed pulse analysis is comparable to the zero-suppression method, even though the signal selection %
+ is done after the data acquisition.
+ The outcome is similar: the uneccessary information are nullified.
+ It is easy to appreciate the benefits derived from this technique, just by looking at Tab.~\ref{tab:zero}.
+ The memory size of the analysed files varies from \np{0.3}\,\% to \np{3}\,\%, with minima of the order of %
+ \np{0.1}\,\%, depending on the choice of the parameters.
+ The results in Tab.~\ref{tab:zero} indicates that $V_T$ has the strongest influence on the final data size, %
+ as expected.
+ The other two parameters, instead, are not of great concern, since they don't impact on the effective number %
+ of the pulses.
+ Combined with the post-processor software, which reduces the raw data files to almost a quarter of the initial %
+ size, the zero-suppression method could achieve a compression factor of about four-hundred.
+
+\begin{table}
+  \caption{Data sizes of the analysed data sets. The \emph{ratio} columns present the ratio between the final %
+  data size and the original size of the post-processed files, listed in Tab.~\ref{tab:runs}.}
+  \label{tab:zero}
+  \centering
+  \small
+  \begin{tabular}{lrrrrrr}
+    \toprule
+    &	\multicolumn{2}{c}{\textbf{Cosmics}} & \multicolumn{2}{c}{\textbf{Beam}} 	\\%
+    \textbf{Label}& Data size & Ratio & Data size & Ratio 	\\
+    		&	(MB)	& \%	& (MB)	& \%	&	\\
+    \midrule
+$C$	      & \np{329.331} & \np{0.310} & \np{675.355}  & \np{0.886} \\
+    \midrule
+$V_{00}$      & \np{621.029} & \np{0.585} & \np{1779.345} & \np{2.333} \\
+$V_{01}$      & \np{510.056} & \np{0.481} & \np{1384.335} & \np{1.815} \\
+$V_{05}$      & \np{121.439} & \np{0.114} & \np{351.355}  & \np{0.461} \\
+$V_{10}$      & \np{91.656}  & \np{0.086} & \np{249.068}  & \np{0.327} \\
+    \midrule
+$N_{15}$      & \np{326.970} & \np{0.308} & \np{669.110}  & \np{0.877} \\
+$N_{30}$      & \np{321.029} & \np{0.302} & \np{646.297}  & \np{0.848} \\
+$N_{50}$      & \np{318.970} & \np{0.301} & \np{631.707}  & \np{0.828} \\
+    \midrule
+$\Delta_{50}$ & \np{320.291} & \np{0.302} & \np{678.463}  & \np{0.890} \\
+$\Delta_{30}$ & \np{321.040} & \np{0.302} & \np{675.090}  & \np{0.885} \\
+$\Delta_{20}$ & \np{321.896} & \np{0.303} & \np{679.243}  & \np{0.891} \\
+$\Delta_{10}$ & \np{320.299} & \np{0.302} & \np{666.223}  & \np{0.874} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+

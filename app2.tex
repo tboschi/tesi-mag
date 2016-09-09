@@ -3,6 +3,67 @@
 \chapter{Monte Carlo simulation}
 \label{app:B}
 
- %A simple Monte Carlo simulation was developed in order to help study the Cherenkov radiation production %
- %to the passage of a charged particle.
 
+ A simple Monte Carlo simulation was developed in order to help study the Cherenkov radiation production %
+ to the passage of a charged particle.
+ The minimal model to study the distribution of the photon on the floor of the tank and the %
+ role of the walls is implemented.
+ This considers only vertical muons with $\beta = 1$, and both scattering with nucleons and the related %
+ energy loss are ignored.
+ A uniform Mersenne Twister (MT) generator\footnote{The Mersenne Twister is a pseudorandom number %
+   generator (PRNG) and its name is due to the fact that its period length is a Mersenne prime.
+   The version used employes the Mersenne prime $2^{219937}-1$.} defines the position of the %
+ muon entering in the tank.
+ It propagation is stopped every \np{0.1}~cm and a handful of photons is generated isotropically, %
+ using the same PRNG.
+ The number of photons at each step is fixed a priori and Eq.~\ref{eq:numphoton} gives:
+ \begin{equation}
+   N_\gamma \simeq 27\,,
+ \end{equation}
+ with $L = \np{0.1}$~cm, $\theta_C$ maximum, and $\lambda$ interval from 300 to 500~nm.
+ As soon as all the photons ends their route, the muon is moved and the process is repeated again, until %
+ even the charged lepton hits the bottom.
+
+ The track of the gammas is precisely defined by its origin, the direction it is emitted, and %
+ the reflection coefficient of the PVC walls, because they travel in straight lines.
+ With elementary geometry, it is easy to calculate the track of the photons.
+ Since the muon travels at ultrarelativistic speed, the wavefront of the photons has the maximum %
+ angle allowed by the Cherenkov effect, which in water is $\theta_C = 41^\circ$.
+ The muon and the photons tracks are exemplified in Fig.~\ref{fig:muontrack}.
+ The impact of the walls is managed by the same MT generator.
+
+ For every reflection coefficient, hundred muons are simulated and some illustrative results are shown %
+ in Fig.~\ref{fig:pattern}.
+ Being the tank 4~metres tall, the muon makes 4000 steps, hence \np{108000} photons are %
+ generated everytime.
+ Obviously only when the walls entirely reflects (100\,\% reflection), all the photons reach the bottom.
+ Despite its simplicity, this model is capable of producing interesting results.
+
+ %\begin{wrapfigure}{R}{0.5\textwidth}
+ \begin{figure}
+  \centering
+  \def\svgwidth{0.7\textwidth}
+  \import{pics/}{muontrack.tex}
+  \caption{Track of the incoming muon (in purple) and the emitted photons (in green).
+    On the left, the side view underlines the angle of the wavefront with respect to the z-axis, %
+    $\theta_C$.
+    On the rigth, the top view shows the xy-plane reflections of the photon.
+    Since $\theta$ and $\alpha$ are known, the angle after the reflection is %
+    $\beta = \pi - \theta+2\alpha$.}
+  \label{fig:muontrack}
+ %\end{wrapfigure}
+ \end{figure}
+
+\begin{figure}
+  \centering
+  \subfloat[Muon at the centre of the cylinder and 100\,\% wall reflection.]%
+    {\includegraphics[width=0.48\textwidth]{pics/mcentre_ref100.pdf}} \hfill 
+  \subfloat[Muon at the centre of the cylinder and 0\,\% wall reflection.]%
+    {\includegraphics[width=0.48\textwidth]{pics/mcentre_ref000.pdf}} \\
+  \subfloat[Muon at a distance greater than 120~cm from the centre and 100\,\% wall reflection.]%
+    {\includegraphics[width=0.48\textwidth]{pics/mlateral_ref100.pdf}} \hfill 
+  \subfloat[Muon at a dsitance greater than 120~cm from the centre and 0\,\% wall reflection.]%
+    {\includegraphics[width=0.48\textwidth]{pics/mlateral_ref000.pdf}} 
+    \caption{Patternc createdhotons deposited on the bottom of the water tank.}
+  \label{fig:pattern}
+\end{figure}

@@ -2,11 +2,12 @@
 %Tommaso Boschi
 
 %preamble
-\documentclass[a4paper, usenatbib, 11pt]{book}
+\documentclass[a4paper, 11pt]{book}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[italian, english]{babel}
 \usepackage[hidelinks]{hyperref}
+\usepackage{sectsty}
 \usepackage{fancyhdr}
 \usepackage{natbib}
 \usepackage{indentfirst}
@@ -27,6 +28,7 @@
 \usepackage{color}
 \usepackage{caption}
 \usepackage{subfig}
+\usepackage{floatrow}
 \usepackage{threeparttable}
 \usepackage{varwidth}
 \usepackage{tikz}
@@ -42,7 +44,7 @@
 \captionsetup{format=hang,labelfont={sf,bf}}
 %\usepackage[backend=biber]{biblatex}
 
-%\addbibresource{./one.bib}
+%\addbibresource{./collection.bib}
 
 \newcommand{\inch}{$^{\prime\prime}$}
 
@@ -88,7 +90,7 @@
 \backmatter
 
 %Biblio
-\bibliographystyle{abbrv}
-\bibliography{one}
+\bibliographystyle{plain}
+\bibliography{collection}
 %\printbibliography
 \end{document}

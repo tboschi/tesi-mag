@@ -1,67 +1,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		CHAP 5		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Data analysis results}
-\label{cha:5}
+\label{cha:analysis}
 
  Some data analysis results are presented in this chapter, regarding either the method developed or simulation.
- The plots presented here were realised using the $C$ data set.
+ The plots reported here were realised using the $C$ data set.
 
-
-\section{Data size reduction}
-
-\begin{table}
-  \caption{Data sizes of the analysed data sets. The \emph{ratio} columns present the ratio between the final %
-  data size and the original size of the post-processed files, listed in Tab.~\ref{tab:runs}.}
-  \label{tab:zero}
-  \centering
-  \small
-  \begin{tabular}{lrrrrrr}
-    \toprule
-    &	\multicolumn{2}{c}{\textbf{Cosmics}} & \multicolumn{2}{c}{\textbf{Beam}} %
-    						&\multicolumn{2}{c}{\textbf{Neutron}}	\\
-    \textbf{Label}& Data size & Ratio & Data size & Ratio & Data size & Ratio 			\\
-    		&	(MB)	& \%	& (MB)	& \%	&	(MB)	& \%			\\
-    \midrule
-$C$	      & \np{329.331} & \np{0.310} & \np{235.490} & \np{1.142} & \np{675.355}  & \np{0.886} \\
-    \midrule
-$V_{00}$      & \np{621.029} & \np{0.585} & \np{624.499} & \np{3.028} & \np{1779.345} & \np{2.333} \\
-$V_{01}$      & \np{510.056} & \np{0.481} & \np{484.903} & \np{2.351} & \np{1384.335} & \np{1.815} \\
-$V_{05}$      & \np{121.439} & \np{0.114} & \np{132.196} & \np{0.641} & \np{351.355}  & \np{0.461} \\
-$V_{10}$      & \np{91.656}  & \np{0.086} & \np{99.596}  & \np{0.483} & \np{249.068}  & \np{0.327} \\
-    \midrule
-$N_{15}$      & \np{326.970} & \np{0.308} & \np{240.755} & \np{1.167} & \np{669.110}  & \np{0.877} \\
-$N_{30}$      & \np{321.029} & \np{0.302} & \np{226.179} & \np{1.097} & \np{646.297}  & \np{0.848} \\
-$N_{50}$      & \np{318.970} & \np{0.301} & \np{221.396} & \np{1.074} & \np{631.707}  & \np{0.828} \\
-    \midrule
-$\Delta_{50}$ & \np{320.291} & \np{0.302} & \np{245.097} & \np{1.188} & \np{678.463}  & \np{0.890} \\
-$\Delta_{30}$ & \np{321.040} & \np{0.302} & \np{236.294} & \np{1.146} & \np{675.090}  & \np{0.885} \\
-$\Delta_{20}$ & \np{321.896} & \np{0.303} & \np{237.732} & \np{1.153} & \np{679.243}  & \np{0.891} \\
-$\Delta_{10}$ & \np{320.299} & \np{0.302} & \np{233.977} & \np{1.135} & \np{666.223}  & \np{0.874} \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
- A zero-suppression method is planned to be implemented in the data acquisition system for the next stages of ANNIE.
- As a matter of fact, most of the digitised time window from the VME cards is of no use with respect to the %
- event reconstruction.
- Taking advantage of circular memory, this technique basically saves a narrower buffer every time an arbitrary %
- voltage threshold is reached.
- Only individual signals are stored, avoiding long-term memory wasting.
-
- The developed pulse analysis, discussed in chapter~\ref{cha:4}, is comparable to the zero-suppression method.
- Even though the signal selection is done after the data acquisition, the outcome is similar: %
- the uneccessary information are nullified.
- It is easy to appreciate the benefits derived from this technique, just by looking at Tab.~\ref{tab:zero}.
- The memory size of the analysed files varies from \np{0.3}\,\% to \np{3}\,\%, with minima of the order of %
- \np{0.1}\,\%, depending on the choice of the parameters.
- The results in Tab.~\ref{tab:zero} indicates that $V_T$ has the strongest influence on the final data size, %
- as expected.
- The other two parameters, instead, are not of great concern, since they don't impact on the effective number %
- of the pulses.
- Combined with the post-processor software, which reduces the raw data files to almost a quarter of the initial %
- size, the zero-suppression method could achieve a compression factor of about four-hundred.
 
 \section{Cosmic muons}
+\label{sec:cosmic}
 
  High energy particles, mainly originated outside the Solar System and thus called %
  \emph{Cosmic Rays}, impact on the Earth's atmosphere and producing mesons, which in turn generate %
@@ -133,9 +80,9 @@ $\Delta_{10}$ & \np{320.299} & \np{0.302} & \np{233.977} & \np{1.135} & \np{666.
  \end{equation}
  
  With the beam off, only cosmic rays leave a trace in the ANNIE detector.
- From Eq.~\ref{eq:ch_Eth}, every muon with an energy $E > \np{159.739}$~MeV can produce Cherenkov %
+ From Eq.~\ref{eq:ch_Eth}, every muon with an energy \mbox{$E \gtrsim \np{160}$~MeV} can produce Cherenkov %
  radiation, given that the refractive index of water is $n = \np{1.33}$ and %
- the muon mass is \np{105.658}~MeV\footnote{The muon mass is known with an accuracy of order \np{e-8}. %
+ the muon mass is 105~MeV\footnote{The muon mass is known with an accuracy of order \np{e-8}. %
    According to the PDG, $m_\mu = \np{105.6583715} \pm \np{0.0000035}$~MeV.}.
  Since the average energy of the muon reaching the ground is well above the Cherenkov threshold, %
  the nominal flux at sea level can be used to evaluate the cosmic background rate.
@@ -144,7 +91,7 @@ $\Delta_{10}$ & \np{320.299} & \np{0.302} & \np{233.977} & \np{1.135} & \np{666.
  A rough estimation suggests that the rate of muons reaching the detector is 
  \begin{equation}
   \label{eq:anniemuon}
-   I \simeq 7~\mathrm{m^2}\,I_0 \simeq \np{1036}~\mathrm{Hz}\,.
+   I \simeq (7\,I_0)~\mathrm{m^2} \simeq \np{1036}~\mathrm{Hz}\,.
  \end{equation}
  This rate can be estimated, counting the Events found by the analysis algorithm.
  For a more realistic calculation, events that show coincidences with the Veto or the MRD are discarded.
@@ -227,6 +174,7 @@ $\Delta_{10}$ & \np{217964} & \np{8135}  & \np{307014}	& \np{37.740}	& \np{466.5
 
 
 \section{Centre of interaction}
+\label{sec:centre}
 
  Simple event reconstruction was undertaken with preliminary data, although the spatial resolution of the %
  present photodetector array is limited.
@@ -376,6 +324,7 @@ $\Delta_{10}$ & \np{8135}  & \np{289}  & \np{7849} & \np{3.553}  & \np{209559} &
 
 
  \section{Beam events}
+ \label{sec:events}
 
 
  \begin{figure}
@@ -425,6 +374,7 @@ $\Delta_{10}$ & \np{5178} & \np{3780} & \np{1398} & \np{73.001}   \\
  With the help of the beam run an evaluation on the strenght of the rejection method can be undertaken, selecting %
  beam related event only.
  As illustrated in Fig.~\ref{fig:beamspec}, the beam events happen from \np{10.2} to \np{11.8} microseconds.
+ The spill lasts indeed $\np{1.6}~\mu$s.
  To make sure only beam-related processes are counted, signals which have a correspective Veto signals are discarded, %
  while only the pulses with both layers of the MRD on are selected.
  As a consequence, these restrictions permit to consider interactions happening inside the water volume and %
@@ -432,10 +382,11 @@ $\Delta_{10}$ & \np{5178} & \np{3780} & \np{1398} & \np{73.001}   \\
  In Tab-~\ref{tab:beamcount}, the results.
 
 \section{Muon decay}
+\label{sec:muon}
 
  As explained in section~ref, the dominant decay channel of the muon is the \emph{Michel decay}, which is %
  reported in Eq.~\ref{eq:mupdecay} and~\ref{eq:mundecay}.
- The muon lifetime is a physical quantity well known and measured to be on average %
+ The muon lifetime is a well known physical quantity and measured to be on average %
  \begin{equation}
    \tau_{\mathrm{avg}} = (\np{2.1969811}\pm\np{0.0000022})~\mu\,.
  \end{equation}
@@ -455,31 +406,37 @@ $\Delta_{10}$ & \np{5178} & \np{3780} & \np{1398} & \np{73.001}   \\
  can be detected.
  Measuring the abudance of electrons produced in such way, the muon lifetime can be inferred.
 
- Observing the time spectrum of the Beam run, an exponential tail is found after the beam position, as stressed %
- in Fig.~\ref{fig:beamtail}.
- The time profile of event is fitted with the function
+ Observing the time spectrum of the Beam run in Fig.~\ref{fig:beamtail}, an exponential tail is found after %
+ the beam position, particulary accentuated in the Event signals.
+ The histogram can be fitted with the function:
  \begin{equation}
    \label{eq:expo}
-   y = N \mathrm{e}^{-x / \tau} + c_E \,,
+   y = N \mathrm{e}^{-x / \tau} + c_E \,.
  \end{equation}
- while the time profile of noise is fitted with
+ On the contrary, the Noise signals show a gaussian distribution right after the beam occurrence, %
+ which can be fitted with:
  \begin{equation}
    \label{eq:gaus}
    y = A \exp{\bigg (-\frac{(x-\mu)^2}{2\sigma^2} \bigg )} + c_N\,.
  \end{equation}
- Event the sum of the two spectra is fitted, with a function that is the sum the Ed.~\ref{eq:expo} and~\ref{eq:gaus}:
+ Therefore the spectrum, realised without distiguishing between Events and Noises, may be fitted with the sum of %
+ Eq.~\ref{eq:expo} and Eq.~\ref{eq:gaus}:
  \begin{equation}
    \label{eq:tot}
    y = N_{\mathrm{T}} \mathrm{\Large e}^{-x / \tau_{\mathrm{T}}} + A_{\mathrm{T}} %
    \exp{\bigg (-\frac{(x-\mu_{\mathrm{T}})^2}{2\sigma_{\mathrm{T}}^2} \bigg )} + c_{\mathrm{T}}\,.
  \end{equation}
 
- In Tab.~\ref{tab:fitres}, the fitted lifetime and the gaussian peak are only reported.
+ Regarding Eq.~\ref{eq:expo}, the $\tau$ parameter should be compatible with the muon lifetime, while the %
+ gaussian peak of Eq.~\ref{eq:gaus} is \textcolor{red}{I don't know yet.}
+ In Tab.~\ref{tab:fitres}, the fitted values of these two paramters are reported.
  The fit results in their entirety are reviewed in App.~\ref{app:C}.
 
  \begin{table}
  %\begin{wraptable}{r}{0.5\textwidth}
-  \caption{False positive count.}
+   \caption{Fit results of the $\tau$ and $\mu$ parameter of respectively Eq.~\ref{eq:expo}, for Event part of %
+   the spectrum, and Eq.~\ref{eq:gaus}, for the Noise one. The entire spectrum is also fitted, with Eq.~\ref{eq:tot}, %
+   and the two paramteres are infered.}
   \label{tab:fitres}
   \centering
   \small
@@ -509,11 +466,14 @@ $\Delta_{10}$ & \np{2.09}\np{+-0.04} & \np{17.60}\np{+-0.05} & \np{3.8}\np{+-0.1
  \end{table}
  %\end{wraptable}
 
+ The most compatible values of the measured lifetime with $\tau_{\mathrm{avg}}$ are given by $V_{05}$, $V_{10}$, %
+ $\Delta_{20}$, and $\Delta_{10}$, likely because in these data sets the time correlation between pulses is %
+ stricter and other effects, such as reflection, are neglected.
 
  \begin{figure}[]
    \centering
    \includegraphics[width=0.5\textwidth]{pics/evnobeam.pdf}
-   \caption{The time spectrum of the Beam run has split, between event (blue) and noise (red) pulses.
+   \caption{The time spectrum of the Beam run has been split, between event (blue) and noise (red) pulses.
      After the beam position, an exponential tail is visibile for the events, while there is a gaussian peak for %
      the noises.
      The total plot, in black, therefore would present a tail given by the sum of an exponential and %
@@ -522,9 +482,85 @@ $\Delta_{10}$ & \np{2.09}\np{+-0.04} & \np{17.60}\np{+-0.05} & \np{3.8}\np{+-0.1
  \end{figure}
 
 
-
-
-
 \section{Neutron yield}
+\label{sec:neutron}
+ 
+ The PMT mounted on top of the NCV is able do detected the scintillation light and is analysed just as %
+ the other detectors, but discrimination process between event and signal is skipped.
+ The number of pulses extracted from the Beam run is summarised in Tab.~\ref{tab:ncvfreq}, and the mean %
+ of their time delay with respect to the beam position is computed to be around 26~$\mu$s, in %
+ agreement with the distinctive time of neutron capture.
+ However, this result is not robust because the statistic is quite low and the dispersion of the measures %
+ is very high, as indicated by the standard deviations.
+ The average shape of the signals produced by the scintillator is illustrated in Fig.~\ref{fig:ncvpulses} and %
+ compared with the event and the noise average pulse.
+
+ \begin{table}
+   \begin{floatrow}
+     \floatbox{table}[0.5\textwidth][\FBheight][t]
+     {\caption{The pulses acquired from the PMT of the NCV were countend. The arithmetic average of their time %
+     position with respect to the time occurence of the beam and their deviation from the mean are also calculated.}%
+      \label{tab:ncvfreq}}
+     {\centering
+      \small
+      \begin{tabular}{lrcc}
+	    \toprule
+	    \textbf{Label} & NCV & Mean  & RMS  	\\
+	    		   &     & ($\mu$s) & ($\mu$s)  	\\
+	    \midrule
+	    $\mathbf{C}$& 424  & \np{26} \np{+-1}   & \np{23.6} \np{+-0.8}  	\\	
+	    \midrule
+	    $V_{00}$	& 1095 & \np{25.8} \np{+-0.7} & \np{22.5} \np{+-0.5} \\
+	    $V_{01}$	& 751  & \np{26.4} \np{+-0.8} & \np{23.1} \np{+-0.6} \\
+	    $V_{05}$	& 139  & \np{26}  \np{+-2}   & \np{23}  \np{+-1} \\
+	    $V_{10}$	& 29   & \np{28}  \np{+-4}   & \np{21}  \np{+-3} \\
+	    \midrule                                         
+	    $N_{15}$	& 414  & \np{26}  \np{+-1}   & \np{23.6} \np{+-0.8} \\
+	    $N_{30}$	& 396  & \np{26}  \np{+-1}   & \np{23.7} \np{+-0.8} \\
+	    $N_{50}$	& 384  & \np{26}  \np{+-1}   & \np{23.9} \np{+-0.9} \\
+	    \midrule                                        
+	$\Delta_{50}$	& 424  & \np{26}  \np{+-1}   & \np{23.6} \np{+-0.8} \\
+	$\Delta_{30}$	& 424  & \np{26}  \np{+-1}   & \np{23.6} \np{+-0.8}  \\
+	$\Delta_{20}$	& 424  & \np{26}  \np{+-1}   & \np{23.6} \np{+-0.8}  \\
+	$\Delta_{10}$	& 424  & \np{26}  \np{+-1}   & \np{23.6} \np{+-0.8}  \\
+	    \bottomrule
+       \end{tabular}}
+
+       \floatbox{figure}[0.5\textwidth][\FBheight][t]
+      {\caption{Average pulses of the Beam run in comparison with the pulses collected from the NCV.}%
+      \label{fig:ncvpulses}}
+       {\includegraphics[width=0.55\textwidth]{pics/NCVpulse.pdf}}
+  \end{floatrow}
+ \end{table}
+
 
 \section{First MRD data}
+\label{sec:mrddata}
+
+ The spectrum in Fig.~\ref{fig:mrdbeam} is the first run taken with the MRD DAQ.
+ It corresponds to ($\np{345198.25}\pm{0.03}$)~s of acquisition\footnote{The error is given by the accuracy %
+   of the NTP server, which is about thirty milliseconds.}, or roughyl speaking four days.
+ As explained in section~ref, only the second and the third layers are instrumented in Phase I.
+ The resolution of the TDCs is set to the maximum value available (4.0~ns), therefore the time window %
+ is \np{4.088}~$\mu$s long.
+ This suffices the aim of this preliminary test, i.e. to observe the beam by muon detection.
+ The events collected are \np{64298}, resulting in nearly \np{0.2}~per seconds on average.
+ The spectrum exhibits an augmentation, since it rises to an average value of %
+ $(\np{86.3}\pm\np{0.5})$ from $(\np{45.6}\pm\np{0.4})$ and $(\np{48.9}\pm\np{0.4})$ respectively %
+ before and after it.
+ These last two means are far from being compatible with the middle one, hence the contour of the spectrum %
+ can be implied to the presence of the beam.
+ The increase happens from $\np{1.124}~\mu$s to $\np{2.648}~\mu$s in the TDC time window: %
+ the beam is $\np{1.524}~\mu$s wide, in agreement with the effective total duration of the spill, %
+ which is $\np{1.6}~\mu$s.
+
+ \begin{figure}[]
+   \centering
+   \includegraphics[width=0.7\textwidth]{pics/mrdbeam.pdf}
+   \caption{The time spectrum of the Beam run, seen by the MRD.
+     The black line represents the arithmetic mean of the frequencies (y-axis), estimated to be %
+     $\np{57.1}\pm\np{0.2}$.
+     The red lines at \np{1.124} and \np{2.648} are respectively the last and first intersection %
+     of the black line with the spectrum, in correspondence of the beam.}
+   \label{fig:mrdbeam}
+ \end{figure}
